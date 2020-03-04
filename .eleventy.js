@@ -1,4 +1,4 @@
-let project = require('./html/_data/project');
+let project = require('./html/_data/_project');
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("css/");

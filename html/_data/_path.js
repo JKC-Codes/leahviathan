@@ -1,4 +1,4 @@
-let project = require('./project');
+let project = require('./_project');
 let pathPrefix = project.name + "/"
 
 module.exports = {
