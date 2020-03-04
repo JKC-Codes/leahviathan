@@ -53,7 +53,7 @@ function img() {
 	return gulp.src(baseFolder + '**/img/**')
 	.pipe(imagemin([
 		imagemin.gifsicle(),
-		imagemin.jpegtran(),
+		imagemin.mozjpeg(),
 		imagemin.optipng(),
 		imagemin.svgo({plugins: [{removeViewBox: false}]})
 	]))
