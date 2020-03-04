@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+{% include head.html %}
+<body>
+	{% if page.url == "/" %}{% else %}{% include header.html %}{% endif %}
+	{{ content }}
+	{% include footer.html %}
+</body>
+</html>

@@ -1,5 +1,3 @@
-let project = require('./html/_data/_project');
-
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("css/");
 	eleventyConfig.addPassthroughCopy("img/");
@@ -7,10 +5,10 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
 			input: "html/",
-			output: "staging" + project.name,
-			includes: "_templates/"
+			output: "staging",
+			includes: "_includes",
+			layouts: "_layouts"
 		},
-		passthroughFileCopy: true,
-		pathPrefix: project.name
+		passthroughFileCopy: true
   };
 };
