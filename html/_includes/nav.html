@@ -1,11 +1,14 @@
+{% assign pageSlugs = "/,/info/,/merch/,/stream/,/cosplay/,/blog/,/contact/" | split: ',' %}
+{% assign pageDisplays = "Home,Info,Merch,Stream,Cosplay,Blog,Contact" | split: ',' %}
+
 <nav>
 	<ul>
-		<li><a {% if page.url == "/" %}aria-current="page"{% endif %} href="/">Home</a></li>
-		<li><a {% if page.url == "/info/" %}aria-current="page"{% endif %} href="/info/">Info</a></li>
-		<li><a {% if page.url == "/merch/" %}aria-current="page"{% endif %} href="/merch/">Merch</a></li>
-		<li><a {% if page.url == "/stream/" %}aria-current="page"{% endif %} href="/stream/">Stream</a></li>
-		<li><a {% if page.url == "/cosplay/" %}aria-current="page"{% endif %} href="/cosplay/">Cosplay</a></li>
-		<li><a {% if page.url == "/blog/" %}aria-current="page"{% endif %} href="/blog/">Blog</a></li>
-		<li><a {% if page.url == "/contact/" %}aria-current="page"{% endif %} href="/contact/">Contact</a></li>
+		{%- for slug in pageSlugs %}
+		<li {%- if page.url == slug %} aria-current="page"{% endif -%}>
+			{%- unless page.url == slug -%}<a href="{{ slug }}">{%- endunless -%}
+				{{ pageDisplays[forloop.index0] }}
+			{%- unless page.url == slug -%}</a>{%- endunless -%}
+		</li>
+		{%- endfor %}
 	</ul>
 </nav>
