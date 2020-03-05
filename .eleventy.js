@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("img/");
 	eleventyConfig.addPassthroughCopy("js/");
+	eleventyConfig.addWatchTarget("./sass/");
   return {
     dir: {
 			input: "html/",
