@@ -1,7 +1,7 @@
 {% assign pageSlugs = "/,/info/,/merch/,/stream/,/cosplay/,/blog/,/contact/" | split: ',' %}
 {% assign pageDisplays = "Home,Info,Merch,Stream,Cosplay,Blog,Contact" | split: ',' %}
 
-<nav>
+<nav id="site-nav">
 	<ul>
 		{%- for slug in pageSlugs %}
 		<li {%- if page.url == slug %} aria-current="page"{% endif -%}>

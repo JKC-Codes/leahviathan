@@ -1,0 +1,28 @@
+#site-nav {
+
+padding: 1rem;
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 2.25ch;
+}
+
+[aria-current="page"] {
+	position: relative;
+}
+
+[aria-current="page"]::before {
+	position: absolute;
+	display: block;
+	content: '';
+	background: url("/img/squid.png");
+	background-size: contain;
+	transform: translateY(-50%);
+	top: 50%;
+	right: calc(100% + 0.5ch);
+	width: 1.75ch;
+	height: 1.75ch;
+}
+
+}
