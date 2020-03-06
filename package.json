@@ -1,5 +1,5 @@
 {
-  "name": "project",
+  "name": "leahviathan",
   "version": "1.0.0",
   "description": "",
   "main": "",
@@ -19,8 +19,8 @@
   },
   "scripts": {
     "eleventy": "eleventy --serve",
-    "sass": "sass sass:staging/css --watch --no-source-map",
-    "browser": "delay 1.5 && start firefox.exe -private-window http://localhost:8080",
+    "sass": "sass sass:staging/leahviathan/css --watch",
+    "browser": "delay 1.5 && start firefox.exe -private-window http://localhost:8080/leahviathan/",
     "start": "npm-run-all --parallel sass eleventy browser",
     "restart": "npm-run-all --parallel sass eleventy"
   },

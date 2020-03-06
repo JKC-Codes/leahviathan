@@ -5,7 +5,7 @@
 	<ul>
 		{%- for slug in pageSlugs %}
 		<li {%- if page.url == slug %} aria-current="page"{% endif -%}>
-			{%- unless page.url == slug -%}<a href="{{ slug }}">{%- endunless -%}
+			{%- unless page.url == slug -%}<a href="/leahviathan{{ slug }}">{%- endunless -%}
 				{{ pageDisplays[forloop.index0] }}
 			{%- unless page.url == slug -%}</a>{%- endunless -%}
 		</li>

@@ -1,6 +1,6 @@
 const
 	gulp = require('gulp'),
-	baseFolder = `./staging/`,
+	baseFolder = "./staging/leahviathan/",
 	del = require('del'),
 	htmlmin = require('gulp-htmlmin'),
 	sass = require('gulp-sass'),
@@ -10,7 +10,7 @@ const
 ;
 
 function resetStaging() {
-	return del(baseFolder + '*');
+	return del('./staging/**');
 }
 
 function eleventy() {
@@ -65,11 +65,11 @@ function netlify() {
 }
 
 function browser() {
-	return shell('start firefox.exe -private-window https://jkc-codes.netlify.app');
+	return shell('start firefox.exe -private-window https://jkc-codes.netlify.app/leahviathan');
 }
 
 function resetDocs() {
-	return del('./docs/*');
+	return del('./docs/**');
 }
 
 function createDocs() {
