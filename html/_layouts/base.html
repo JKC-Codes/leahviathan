@@ -2,6 +2,8 @@
 <html lang="en-GB">
 {% include head.html %}
 <body>
+	{% include animations-toggle.html %}
+	{% include nav.html %}
 	{% if page.url != "/" %}{% include header.html %}{% endif %}
 	{{ content }}
 	{% include footer.html %}
