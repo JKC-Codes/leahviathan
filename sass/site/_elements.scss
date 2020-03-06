@@ -5,17 +5,22 @@
 }
 
 html {
+	min-height: 100vh;
 	color: $colour-text;
 	font: $font;
 	overflow-wrap: break-word;
 }
 
 body {
-	// max-width: 75rem;
+	min-height: 100vh;
 	margin: 0 auto;
 	display: grid;
 	grid-template: min-content min-content 1fr min-content / 6.75rem 1fr 6.75rem;
-	background: navy;
+	background: radial-gradient(circle farthest-corner at calc(100% - 10rem) 8rem,
+		hsl(60, 25%, 50%),
+		hsl(215, 60%, 20%) 15rem,
+		hsl(216, 60%, 2.5%)
+	);
 }
 
 main {
