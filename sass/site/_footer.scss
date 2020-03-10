@@ -1,5 +1,25 @@
 #site-footer {
 
 grid-area: -2 / 1 / -1 / -1;
+font-size: 80%;
+color: hsl(210, 5%, 60%);
+justify-self: center;
+margin-top: 5rem;
+
+a:link {
+	color: hsl(210, 5%, 85%);
+}
+
+a:visited {
+	color: hsl(210, 5%, 60%);
+}
+
+a:hover {
+	color: yellow;
+}
+
+a:active {
+	color: orange;
+}
 
 }
