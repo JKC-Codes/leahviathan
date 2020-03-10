@@ -10,7 +10,7 @@ const
 ;
 
 function resetStaging() {
-	return del('./staging/**');
+	return del(['./staging/*', '!./staging/index.html']);
 }
 
 function eleventy() {
