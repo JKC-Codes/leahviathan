@@ -22,6 +22,7 @@
 		top: 50%;
 		right: 0;
 		transform: translateY($translate-y);
+		color: white;
 	}
 
 	label::before{
@@ -31,16 +32,17 @@
 		margin-right: 0.15rem;
 		border-radius: 0.5rem;
 		border: 0.05rem solid hsla(200, 25%, 70%, 0.25);
-		background: hsl(260, 100%, 65%, 0.3);
+		background: hsl(310, 100%, 60%, 0.3);
 	}
 
 	label::after {
 		content: '';
 		width: 1.1rem;
 		height: 1.1rem;
-		background: hsl(200, 25%, 70%);
+		background: hsl(220, 20%, 60%);
 		border-radius: 50%;
-		transform: translate(calc(-100% - 0.1rem), $translate-y)
+		transform: translate(calc(-100% - 0.2rem), $translate-y);
+		transition: transform 75ms;
 	}
 
 	input:checked ~ label::before {
@@ -48,7 +50,7 @@
 	}
 
 	input:checked ~ label::after {
-		transform: translate(-0.05rem, $translate-y);
+		transform: translate(-0.1rem, $translate-y);
 	}
 
 }
