@@ -9,3 +9,7 @@
 	}
 
 }
+
+#page-header .animations-toggle { // Home page header
+	@extend %animations-toggle;
+}
