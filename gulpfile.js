@@ -1,6 +1,6 @@
 const
 	gulp = require('gulp'),
-	baseFolder = "./staging/leahviathan/",
+	destination = "./temp/leahviathan/",
 	del = require('del'),
 	htmlmin = require('gulp-htmlmin'),
 	sass = require('gulp-sass'),
@@ -9,16 +9,16 @@ const
 	shell = require('child_process').exec
 ;
 
-function resetStaging() {
-	return del(['./staging/*', '!./staging/index.html']);
+function temp() {
+	return del('./temp/');
 }
 
 function eleventy() {
-	return shell('eleventy');
+	return shell('eleventy --output="' + destination + '"');
 }
 
 function html() {
-	return gulp.src(baseFolder + '**/*.html')
+	return gulp.src(destination + '**/*.html')
 	.pipe(htmlmin({
 		collapseBooleanAttributes: true,
 		collapseInlineTagWhitespace: true,
@@ -33,53 +33,92 @@ function html() {
 		removeScriptTypeAttributes: true,
 		removeStyleLinkTypeAttributes: true
 	}))
-	.pipe(gulp.dest(baseFolder));
+	.pipe(gulp.dest(destination));
 }
 
 sass.compiler = require('dart-sass');
 function css() {
 	return gulp.src('sass/**/*.scss')
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-		.pipe(gulp.dest(baseFolder + 'css'));
+		.pipe(gulp.dest(destination + 'css'));
 }
 
 function js() {
-	return gulp.src(baseFolder + '**/*.js')
+	return gulp.src(destination + '**/*.js')
 		.pipe(terser())
-		.pipe(gulp.dest(baseFolder));
+		.pipe(gulp.dest(destination));
 }
 
 function img() {
-	return gulp.src(baseFolder + '**/img/**')
+	return gulp.src(destination + '**/img/**')
 	.pipe(imagemin([
 		imagemin.gifsicle(),
 		imagemin.mozjpeg(),
 		imagemin.optipng(),
 		imagemin.svgo({plugins: [{removeViewBox: false}]})
 	]))
-		.pipe(gulp.dest(baseFolder));
+		.pipe(gulp.dest(destination));
 }
 
 function netlify() {
-	return shell('netlify deploy --dir=staging --prod');
+	return shell('netlify deploy --dir=temp --prod');
 }
 
 function browser() {
 	return shell('start firefox.exe -private-window https://jkc-codes.netlify.app/leahviathan');
 }
 
-function resetDocs() {
+function redirect() {
+	return gulp.src('./staging/index.html')
+		.pipe(gulp.dest('./temp/'));
+}
+
+function delDocs() {
 	return del('./docs/**');
 }
 
 function createDocs() {
-	return gulp.src(baseFolder + '**')
-		.pipe(gulp.dest('./docs'));
+	return gulp.src('./temp/leahviathan/**')
+		.pipe(gulp.dest('./docs/'));
 }
 
 function git() {
 	return shell('git add docs && git commit -m \"Build for publishing\" && git push');
 }
 
-gulp.task('stage', gulp.series(resetStaging, eleventy, gulp.parallel(html, css, js, img), netlify, browser));
-gulp.task('publish', gulp.series(resetDocs, createDocs, git));
+
+exports.stage = gulp.series(
+	temp,
+	eleventy,
+	gulp.parallel(
+		html,
+		css,
+		js,
+		img,
+		redirect
+	),
+	netlify,
+	gulp.parallel(
+		browser,
+		temp
+	)
+);
+
+exports.publish = gulp.series(
+	gulp.parallel(
+		delDocs,
+		gulp.series(
+			temp,
+			eleventy,
+			gulp.parallel(
+				html,
+				css,
+				js,
+				img
+			)
+		)
+	),
+	createDocs,
+	temp,
+	git
+);
