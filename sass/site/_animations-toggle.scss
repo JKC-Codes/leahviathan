@@ -52,6 +52,10 @@
 			&:hover {
 				background: transparent;
 			}
+
+			&:focus:not(.focus-visible) {
+				outline: none;
+			}
 		}
 	}
 }
