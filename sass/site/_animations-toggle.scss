@@ -21,16 +21,19 @@
 		font-size: 75%;
 		width: $switch-height * 2;
 		height: $switch-height;
-		padding: 0 0.2rem 0.15rem;
+		padding: 0 0.25rem 0.15rem;
 		margin-left: 0.5rem;
-		border: 0.05rem solid hsla(200, 25%, 70%, 0.25);
 		border-radius: $switch-height;
 
+		&:focus-within {
+			box-shadow: 0 0 0 0.1rem hsl(160, 90%, 40%);
+		}
+
 		&::after {
-			position: absolute;
-			top: -0.1rem;
-			right: -0.15rem;
 			content: '';
+			position: absolute;
+			top: -0.05rem;
+			right: -0.05rem;
 			width: $switch-height + 0.1rem;
 			height: $switch-height + 0.1rem;
 			background: hsl(220, 20%, 60%);
@@ -40,35 +43,31 @@
 
 		input {
 			position: absolute;
-			z-index: -1;
-			top: $switch-height / 2;
+			top: 50%;
 			right: 0;
-			width: $switch-height * 2;
-			height: $switch-height;
-			transform: translateY(-50%);
+			transform: translate(-0.25rem, -50%) scale(0.1);
 			transition: transform 75ms;
+		}
 
-			&:active,
-			&:hover {
-				background: transparent;
-			}
-
-			&:focus:not(.focus-visible) {
-				outline: none;
-			}
+		&:focus-within input {
+			outline: none; // Outline is handled by .switch
 		}
 	}
 }
 
 &[data-checked="true"] .switch {
-	background: hsl(160, 30%, 35%);
+	background: hsla(160, 50%, 40%, 0.75);
 }
 
 &[data-checked="false"] .switch {
-	background: hsl(310, 20%, 40%);
+	background: hsla(310, 75%, 50%, 0.5);
 
 	&::after {
-		transform: translateX(-100%);
+		transform: translateX(-$switch-height);
+	}
+
+	& input {
+		transform: translate(-1.2rem, -50%) scale(0.1);
 	}
 }
 
