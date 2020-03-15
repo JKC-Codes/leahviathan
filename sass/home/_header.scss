@@ -1,9 +1,36 @@
 #page-header {
 
+position: relative;
+grid-area: 1 / 1 / 2 / -1;
+margin: #{-$site-padding} #{-$site-padding} 0 #{-$site-padding};
+padding: (2rem + $site-padding) ($site-padding + $site-gutter) 2rem;
+background-image: url('../img/test.svg');
+background-color: black;
+background-size: cover;
+background-position: 0 20vw;
+background-repeat: no-repeat;
+
 .animations-toggle {
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
+}
+
+h1 {
+	@extend %hidden-visually;
+}
+
+.social-icons {
+	margin: 2rem auto 0;
+	@extend %row;
+	justify-content: space-between;
+	width: 35%;
+
+	* {
+		width: 5vw;
+		height: 5vw;
+		border-radius: 25%;
+	}
 }
 
 }

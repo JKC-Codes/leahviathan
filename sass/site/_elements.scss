@@ -14,7 +14,7 @@ html {
 body {
 	min-height: 100vh;
 	margin: 0 auto;
-	padding: 1rem;
+	padding: $site-padding;
 	display: grid;
 	grid-template: min-content 1fr min-content / $site-gutter 1fr $site-gutter;
 	background: radial-gradient(circle farthest-corner at calc(100% - 10rem) 8rem,
@@ -46,5 +46,7 @@ a:active {
 
 img {
 	width: 100%;
+	max-width: 100%;
 	height: auto;
+	max-height: 100%;
 }
