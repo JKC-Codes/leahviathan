@@ -2,7 +2,7 @@
 <html lang="en-GB">
 {% include head.html %}
 <body>
-	{% include nav.html %}
+	{% if page.url != "/" %}{% include nav.html %}{% endif %}
 	{% if page.url != "/" %}{% include header.html %}{% endif %}
 	{{ content }}
 	{% include footer.html %}
