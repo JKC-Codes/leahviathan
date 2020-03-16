@@ -4,11 +4,6 @@ position: relative;
 grid-area: 1 / 1 / 2 / -1;
 margin: #{-$site-padding} #{-$site-padding} 0 #{-$site-padding};
 padding: (2rem + $site-padding) ($site-padding + $site-gutter) 2rem;
-background-image: url('../img/test.svg');
-background-color: black;
-background-size: cover;
-background-position: 0 20vw;
-background-repeat: no-repeat;
 
 .animations-toggle {
 	position: absolute;
@@ -21,15 +16,18 @@ h1 {
 }
 
 .social-icons {
-	margin: 2rem auto 0;
+	margin: 2.5vw auto 0;
+	width: min-content;
 	@extend %row;
-	justify-content: space-between;
-	width: 35%;
 
 	* {
 		width: 5vw;
 		height: 5vw;
 		border-radius: 25%;
+
+		& + * {
+			margin-left: 5vw;
+		}
 	}
 }
 
