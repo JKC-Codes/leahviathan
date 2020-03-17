@@ -1,4 +1,23 @@
 body {
+	@function star($size, $x, $y) {
+		@return 'radial-gradient(circle at '$x+'% '$y/3.5 +'%, hsla(0,0%,100%,0.5) 0.05rem, hsla(0,0%,100%,0) '$size * 0.05rem')';
+	}
+	$stars:
+		#{star(2, 10, 100)},
+		#{star(4, 30, 50)},
+		#{star(3, 12, 86)},
+		#{star(1, 87, 17)},
+		#{star(5, 56, 65)},
+		#{star(1, 12, 20)},
+		#{star(2, 75, 98)},
+		#{star(1, 68, 20)},
+		#{star(2, 45, 93)},
+		#{star(3, 94, 63)},
+		#{star(2, 53, 28)}
+	;
+
+	$colour-sky: hsla(280, 50%, 5%, 1);
+
 	$sky-height-vh: 20vh;
 	$sky-height-vw: 20.8vw;
 	$horizon-height: 1rem;
@@ -12,14 +31,17 @@ body {
 	$fade-start: calc(#{$sky-height-vh} + #{$sky-height-vw + $surface-height} + #{$horizon-height + $break-height});
 	$fade-end: calc(#{$sky-height-vh} + #{$sky-height-vw + $surface-height} + #{$horizon-height + $break-height + $fade-height});
 
-	background-image: linear-gradient(
-		black calc(#{$horizon-end}),
-		$colour-sea-light $surface-start $surface-end,
-		lighten($colour-sea-light, 10%),
-		darken($colour-sea-light, 8%) $fade-start,
-		$colour-sea $fade-end	calc(100% - 10rem),
-		$colour-sea-dark calc(100% - 5rem)
-	);
+	background-image:
+		$stars,
+		linear-gradient(
+			$colour-sky calc(#{$horizon-end}),
+			$colour-sea-light $surface-start $surface-end,
+			lighten($colour-sea-light, 10%),
+			darken($colour-sea-light, 8%) $fade-start,
+			$colour-sea $fade-end	calc(100% - 10rem),
+			$colour-sea-dark calc(100% - 5rem)
+		)
+	;
 
 	@media(min-width: $home-wide) {
 		$sky-height: 15rem;
@@ -34,13 +56,16 @@ body {
 		$fade-start: calc(#{$sky-height-vh} + #{$sky-height + $surface-height + $horizon-height + $break-height});
 		$fade-end: calc(#{$sky-height-vh} + #{$sky-height + $surface-height + $horizon-height + $break-height + $fade-height});
 
-		background-image: linear-gradient(
-			black calc(#{$horizon-end}),
-			$colour-sea-light $surface-start $surface-end,
-			lighten($colour-sea-light, 10%),
-			darken($colour-sea-light, 8%) $fade-start,
-			$colour-sea $fade-end	calc(100% - 10rem),
-			$colour-sea-dark calc(100% - 5rem)
-		);
+		background-image:
+			$stars,
+			linear-gradient(
+				$colour-sky calc(#{$horizon-end}),
+				$colour-sea-light $surface-start $surface-end,
+				lighten($colour-sea-light, 10%),
+				darken($colour-sea-light, 8%) $fade-start,
+				$colour-sea $fade-end	calc(100% - 10rem),
+				$colour-sea-dark calc(100% - 5rem)
+			)
+		;
 	}
 }
