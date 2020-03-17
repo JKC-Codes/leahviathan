@@ -3,6 +3,10 @@
 position: relative;
 grid-area: 1 / 1 / 2 / -1;
 margin: #{-$site-padding} #{-$site-padding} 0 #{-$site-padding};
+padding-bottom: 20vw;
+@media(min-width: $home-wide) {
+	padding-bottom: 14.5rem;
+}
 
 .animations-toggle {
 	position: absolute;
