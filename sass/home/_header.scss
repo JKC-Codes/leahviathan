@@ -18,7 +18,10 @@ h1 {
 	display: block;
 	margin: 20vh auto 0;
 	width: 70vw;
-	max-width: 50rem;
+
+	@media(min-width: $home-wide) {
+		width: 50rem;
+	}
 }
 
 .social-icons {
@@ -30,10 +33,15 @@ h1 {
 	margin: (-2.5vw + $icon-width) auto 0;
 	position: relative;
 
+	@media(min-width: $home-wide) {
+		max-width: 14.4rem;
+		margin: 1.8rem auto 0;
+	}
+
 	&::after {
 		content: "";
 		position: absolute;
-		top: calc(100% + 5.5vw);
+		top: 2vw;
 		left: 0;
 		width: $icon-width * 4;
 		height: $icon-width;
@@ -41,7 +49,14 @@ h1 {
 		background-position: bottom left, bottom center, bottom right;
 		background-repeat: no-repeat;
 		transform: scaleY(-1.6);
+		transform-origin: bottom;
 		opacity: 0.05;
+
+		@media(min-width: $home-wide) {
+			top: 1.5rem;
+			width: 14.4rem;
+			height: 3.6rem;
+		}
 	}
 
 	> a,
@@ -49,6 +64,11 @@ h1 {
 		width: $icon-width;
 		height: $icon-width;
 		border-radius: 25%;
+
+		@media(min-width: $home-wide) {
+			width: 3.6rem;
+			height: 3.6rem;
+		}
 	}
 }
 

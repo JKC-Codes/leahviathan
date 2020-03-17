@@ -1,8 +1,8 @@
 body {
 	$sky-height-vh: 20vh;
-	$sky-height-vw: 24.3vw;
+	$sky-height-vw: 20.8vw;
 	$horizon-height: 1rem;
-	$surface-height: 10vw;
+	$surface-height: 15vw;
 	$break-height: 1.5rem;
 	$fade-height: 10rem;
 
@@ -20,4 +20,27 @@ body {
 		$colour-sea $fade-end	calc(100% - 10rem),
 		$colour-sea-dark calc(100% - 5rem)
 	);
+
+	@media(min-width: $home-wide) {
+		$sky-height: 15rem;
+		$horizon-height: 1rem;
+		$surface-height: 10.8rem;
+		$break-height: 1.5rem;
+		$fade-height: 10rem;
+
+		$horizon-end: calc(#{$sky-height-vh} + #{$sky-height});
+		$surface-start: calc(#{$sky-height-vh} + #{$sky-height + $horizon-height});
+		$surface-end: calc(#{$sky-height-vh} + #{$sky-height + $surface-height + $horizon-height});
+		$fade-start: calc(#{$sky-height-vh} + #{$sky-height + $surface-height + $horizon-height + $break-height});
+		$fade-end: calc(#{$sky-height-vh} + #{$sky-height + $surface-height + $horizon-height + $break-height + $fade-height});
+
+		background-image: linear-gradient(
+			black calc(#{$horizon-end}),
+			$colour-sea-light $surface-start $surface-end,
+			lighten($colour-sea-light, 10%),
+			darken($colour-sea-light, 8%) $fade-start,
+			$colour-sea $fade-end	calc(100% - 10rem),
+			$colour-sea-dark calc(100% - 5rem)
+		);
+	}
 }
