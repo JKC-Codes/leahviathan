@@ -33,14 +33,14 @@ h1 {
 	&::after {
 		content: "";
 		position: absolute;
-		top: calc(100% + 2rem);
+		top: calc(100% + 5.5vw);
 		left: 0;
 		width: $icon-width * 4;
 		height: $icon-width;
 		background-image: url("../img/icon-twitch.svg"), url("../img/icon-twitter.svg"), url("../img/icon-instagram.svg");
 		background-position: bottom left, bottom center, bottom right;
 		background-repeat: no-repeat;
-		transform: scaleY(-1.5);
+		transform: scaleY(-1.6);
 		opacity: 0.05;
 	}
 

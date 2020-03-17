@@ -1,23 +1,19 @@
 body {
-	$padding-top: 3rem;
-	$padding-sides: 15.5rem;
-	$image-ratio: 0.24;
-	$image-height: calc(100vw - #{$padding-sides});
-
-	$sky-height: calc(#{$padding-top} + #{$image-height} * #{$image-ratio});
+	$sky-height-vh: 20vh;
+	$sky-height-vw: 24.3vw;
 	$horizon-height: 1rem;
-	$surface-height: 8vw;
+	$surface-height: 10vw;
 	$break-height: 1.5rem;
 	$fade-height: 10rem;
 
-	$sky-end: $sky-height;
-	$surface-start: calc(#{$sky-end} + #{$horizon-height});
-	$surface-end: calc(#{$surface-start} + #{$surface-height});
-	$fade-start: calc(#{$surface-end} + #{$break-height});
-	$fade-end: calc(#{$fade-start} + #{$fade-height});
+	$horizon-end: calc(#{$sky-height-vh} + #{$sky-height-vw});
+	$surface-start: calc(#{$sky-height-vh} + #{$sky-height-vw} + #{$horizon-height});
+	$surface-end: calc(#{$sky-height-vh} + #{$sky-height-vw + $surface-height} + #{$horizon-height});
+	$fade-start: calc(#{$sky-height-vh} + #{$sky-height-vw + $surface-height} + #{$horizon-height + $break-height});
+	$fade-end: calc(#{$sky-height-vh} + #{$sky-height-vw + $surface-height} + #{$horizon-height + $break-height + $fade-height});
 
 	background-image: linear-gradient(
-		black $sky-end,
+		black calc(#{$horizon-end}),
 		$colour-sea-light $surface-start $surface-end,
 		lighten($colour-sea-light, 10%),
 		darken($colour-sea-light, 8%) $fade-start,
