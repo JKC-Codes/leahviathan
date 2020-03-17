@@ -3,7 +3,6 @@
 position: relative;
 grid-area: 1 / 1 / 2 / -1;
 margin: #{-$site-padding} #{-$site-padding} 0 #{-$site-padding};
-padding: (2rem + $site-padding) ($site-padding + $site-gutter) 2rem;
 
 .animations-toggle {
 	position: absolute;
@@ -15,19 +14,41 @@ h1 {
 	@extend %hidden-visually;
 }
 
+.neon-header {
+	display: block;
+	margin: 20vh auto 0;
+	width: 70vw;
+	max-width: 50rem;
+}
+
 .social-icons {
-	margin: 2.5vw auto 0;
-	width: min-content;
+	$icon-width: 5vw;
+
 	@extend %row;
+	justify-content: space-between;
+	max-width: $icon-width * 4;
+	margin: (-2.5vw + $icon-width) auto 0;
+	position: relative;
 
-	* {
-		width: 5vw;
-		height: 5vw;
+	&::after {
+		content: "";
+		position: absolute;
+		top: calc(100% + 2rem);
+		left: 0;
+		width: $icon-width * 4;
+		height: $icon-width;
+		background-image: url("../img/icon-twitch.svg"), url("../img/icon-twitter.svg"), url("../img/icon-instagram.svg");
+		background-position: bottom left, bottom center, bottom right;
+		background-repeat: no-repeat;
+		transform: scaleY(-1.5);
+		opacity: 0.05;
+	}
+
+	> a,
+	> a > img {
+		width: $icon-width;
+		height: $icon-width;
 		border-radius: 25%;
-
-		& + * {
-			margin-left: 5vw;
-		}
 	}
 }
 
