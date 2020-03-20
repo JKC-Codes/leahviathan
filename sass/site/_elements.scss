@@ -9,6 +9,7 @@ html {
 	color: $colour-text;
 	font: $font;
 	overflow-wrap: break-word;
+	background: $colour-sea;
 }
 
 body {
@@ -17,11 +18,17 @@ body {
 	padding: $site-padding;
 	display: grid;
 	grid-template: min-content 1fr min-content / $site-gutter 1fr $site-gutter;
-	background: radial-gradient(circle farthest-corner at calc(100% - 10rem) 8rem,
-		hsl(60, 25%, 50%),
-		hsl(205, 60%, 20%) 15rem,
-		hsl(216, 60%, 2.5%)
-	);
+	background:
+		radial-gradient(
+			circle farthest-corner at calc(100% - 10rem) 8rem,
+			hsl(60, 25%, 50%),
+			transparent 15rem
+		),
+		linear-gradient(
+			transparent calc((100% - 5rem) * 0.9),
+			$colour-sea-dark calc(100% - 5rem)
+		)
+	;
 }
 
 main {
