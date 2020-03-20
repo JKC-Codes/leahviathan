@@ -1,19 +1,21 @@
+$mq-wide: 90rem;
+
 body {
 	@function star($size, $x, $y) {
-		@return 'radial-gradient(circle at '$x+'% '$y/3.5 +'%, hsla(0,0%,100%,0.5) 0.05rem, hsla(0,0%,100%,0) '$size * 0.05rem')';
+		@return 'radial-gradient(circle at '$x+'vw '$y/4 +'vh, hsla(0,0%,100%,0.5) 0.05rem, hsla(0,0%,100%,0) '$size * 0.05rem')';
 	}
 	$stars:
-		#{star(2, 10, 100)},
-		#{star(4, 30, 50)},
-		#{star(3, 12, 86)},
-		#{star(1, 87, 17)},
-		#{star(5, 56, 65)},
+		#{star(5, 87, 17)},
 		#{star(1, 12, 20)},
-		#{star(2, 75, 98)},
 		#{star(1, 68, 20)},
-		#{star(2, 45, 93)},
+		#{star(2, 53, 28)},
+		#{star(4, 30, 50)},
 		#{star(3, 94, 63)},
-		#{star(2, 53, 28)}
+		#{star(2, 56, 65)},
+		#{star(3, 12, 86)},
+		#{star(2, 45, 93)},
+		#{star(2, 75, 98)},
+		#{star(2, 10, 100)}
 	;
 
 	$colour-sky: hsla(280, 50%, 5%, 1);
@@ -43,7 +45,7 @@ body {
 		)
 	;
 
-	@media(min-width: $home-wide) {
+	@media(min-width: $mq-wide) {
 		$sky-height: 15rem;
 		$horizon-height: 1rem;
 		$surface-height: 10.8rem;

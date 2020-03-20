@@ -4,7 +4,7 @@ position: relative;
 grid-area: 1 / 1 / 2 / -1;
 margin: #{-$site-padding} #{-$site-padding} 0 #{-$site-padding};
 padding-bottom: 20vw;
-@media(min-width: $home-wide) {
+@media(min-width: $mq-wide) {
 	padding-bottom: 14.5rem;
 }
 
@@ -23,7 +23,7 @@ h1 {
 	margin: 20vh auto 0;
 	width: 70vw;
 
-	@media(min-width: $home-wide) {
+	@media(min-width: $mq-wide) {
 		width: 50rem;
 	}
 }
@@ -37,7 +37,7 @@ h1 {
 	margin: (-1.75vw + $icon-width / 2) auto 0;
 	position: relative;
 
-	@media(min-width: $home-wide) {
+	@media(min-width: $mq-wide) {
 		max-width: 19.8rem;
 		margin-top: 0.6rem;
 	}
@@ -48,7 +48,7 @@ h1 {
 		height: $icon-width;
 		border-radius: 25%;
 
-		@media(min-width: $home-wide) {
+		@media(min-width: $mq-wide) {
 			width: 3.6rem;
 			height: 3.6rem;
 		}
@@ -60,19 +60,20 @@ h1 {
 		&::after {
 			content: "";
 			position: absolute;
-			top: 2vw;
+			top: 1vw;
 			left: 0;
 			width: $icon-width;
 			height: $icon-width;
-			transform: scale(0.75, -1.5) skewX(-10deg);
+			transform: scale(0.75, -1.25) skewX(-20deg);
 			transform-origin: bottom;
-			filter: opacity(0.25) blur(0.1rem);
+			filter: opacity(0.1) blur(0.25vw);
 			pointer-events: none;
 
-			@media(min-width: $home-wide) {
-				top: 1.44rem;
+			@media(min-width: $mq-wide) {
+				top: 0.72rem;
 				width: 3.6rem;
 				height: 3.6rem;
+				filter: opacity(0.1) blur(0.2rem);
 			}
 		}
 	}
