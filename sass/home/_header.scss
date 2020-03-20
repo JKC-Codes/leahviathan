@@ -33,34 +33,13 @@ h1 {
 
 	@extend %row;
 	justify-content: space-between;
-	max-width: $icon-width * 4;
-	margin: (-2.5vw + $icon-width) auto 0;
+	max-width: $icon-width * 5.5;
+	margin: (-1.75vw + $icon-width / 2) auto 0;
 	position: relative;
 
 	@media(min-width: $home-wide) {
-		max-width: 14.4rem;
-		margin: 1.8rem auto 0;
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		top: 2vw;
-		left: 0;
-		width: $icon-width * 4;
-		height: $icon-width;
-		background-image: url("../img/icon-twitch.svg"), url("../img/icon-twitter.svg"), url("../img/icon-instagram.svg");
-		background-position: bottom left, bottom center, bottom right;
-		background-repeat: no-repeat;
-		transform: scaleY(-1.4);
-		transform-origin: bottom;
-		opacity: 0.05;
-
-		@media(min-width: $home-wide) {
-			top: 1.5rem;
-			width: 14.4rem;
-			height: 3.6rem;
-		}
+		max-width: 19.8rem;
+		margin-top: 0.6rem;
 	}
 
 	> a,
@@ -73,6 +52,45 @@ h1 {
 			width: 3.6rem;
 			height: 3.6rem;
 		}
+	}
+
+	[class^="icon-"] {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 2vw;
+			left: 0;
+			width: $icon-width;
+			height: $icon-width;
+			transform: scale(0.75, -1.5) skewX(-10deg);
+			transform-origin: bottom;
+			filter: opacity(0.25) blur(0.1rem);
+			pointer-events: none;
+
+			@media(min-width: $home-wide) {
+				top: 1.44rem;
+				width: 3.6rem;
+				height: 3.6rem;
+			}
+		}
+	}
+
+	.icon-twitch::after {
+		background-image: url("../img/icon-twitch.svg");
+	}
+
+	.icon-twitter::after {
+		background-image: url("../img/icon-twitter.svg");
+	}
+
+	.icon-instagram::after {
+		background-image: url("../img/icon-instagram.svg");
+	}
+
+	.icon-youtube::after {
+		background-image: url("../img/icon-youtube.svg");
 	}
 }
 
