@@ -54,26 +54,26 @@ h1 {
 		}
 	}
 
-	[class^="icon-"] {
-		position: relative;
+	@supports (filter: opacity(0.1) blur(0.25vw)) {
+		[class^="icon-"] {
+			position: relative;
 
-		&::after {
-			content: "";
-			position: absolute;
-			top: 1vw;
-			left: 0;
-			width: $icon-width;
-			height: $icon-width;
-			transform: scale(0.75, -1.25) skewX(-20deg);
-			transform-origin: bottom;
-			filter: opacity(0.1) blur(0.25vw);
-			pointer-events: none;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 1vw;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transform: scale(0.75, -1.25) skewX(-20deg);
+				transform-origin: bottom;
+				filter: opacity(0.1) blur(0.25vw);
+				pointer-events: none;
 
-			@media(min-width: $mq-wide) {
-				top: 0.72rem;
-				width: 3.6rem;
-				height: 3.6rem;
-				filter: opacity(0.1) blur(0.2rem);
+				@media(min-width: $mq-wide) {
+					top: 0.72rem;
+					filter: opacity(0.1) blur(0.2rem);
+				}
 			}
 		}
 	}
