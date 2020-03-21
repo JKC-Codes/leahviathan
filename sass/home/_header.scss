@@ -20,12 +20,12 @@ $colour-sky: hsl(280, 50%, 5%);
 }
 $stars:
 	#{star(5, 87, 17)},
-	#{star(1, 12, 20)},
-	#{star(1, 68, 20)},
+	#{star(2, 12, 20)},
+	#{star(2, 68, 20)},
 	#{star(2, 53, 28)},
 	#{star(4, 30, 50)},
 	#{star(3, 94, 63)},
-	#{star(2, 56, 65)},
+	#{star(3, 56, 65)},
 	#{star(3, 12, 86)},
 	#{star(2, 45, 93)},
 	#{star(2, 75, 98)},
@@ -33,9 +33,9 @@ $stars:
 ;
 
 $texture:
-	radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 25vw) 0vw calc(22vh + 22vw) / 50vw 8vw no-repeat,
-	radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 20vw) 65vw calc(22vh + 20vw) / 40vw 4vw no-repeat,
-	radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 40vw) 10vw calc(22vh + 20vw) / 80vw 10vw no-repeat,
+	radial-gradient(transparentize(lighten($colour-sea-light, 15%), 0.5), transparent 25vw) -2vw calc(22vh + 24vw) / 50vw 8vw no-repeat,
+	radial-gradient(transparentize(lighten($colour-sea-light, 15%), 0.5), transparent 40vw) 10vw calc(22vh + 20vw) / 80vw 10vw no-repeat,
+	radial-gradient(transparentize(lighten($colour-sea-light, 15%), 0.5), transparent 20vw) 65vw calc(22vh + 20vw) / 40vw 4vw no-repeat,
 ;
 
 background: $heading, $stars, $texture,
@@ -56,12 +56,12 @@ background: $heading, $stars, $texture,
 	}
 	$stars:
 		#{star(5, 87, 17)},
-		#{star(1, 12, 20)},
-		#{star(1, 68, 20)},
+		#{star(2, 12, 20)},
+		#{star(2, 68, 20)},
 		#{star(2, 53, 28)},
 		#{star(4, 30, 50)},
 		#{star(3, 94, 63)},
-		#{star(2, 56, 65)},
+		#{star(3, 56, 65)},
 		#{star(3, 12, 86)},
 		#{star(2, 45, 93)},
 		#{star(2, 75, 98)},
@@ -69,9 +69,9 @@ background: $heading, $stars, $texture,
 	;
 
 	$texture:
-		radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 18rem) 0rem calc(22vh + 15.9rem) / 36rem 5.8rem no-repeat,
-		radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 14.5rem) 46.8rem calc(22vh + 14.4rem) / 28.8rem 2.9rem no-repeat,
-		radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 28.8rem) 7.2rem calc(22vh + 14.4rem) / 57.6rem 7.2rem no-repeat,
+		radial-gradient(transparentize(lighten($colour-sea-light, 15%), 0.5), transparent 18rem) -1.5rem calc(22vh + 17.3rem) / 36rem 5.8rem no-repeat,
+		radial-gradient(transparentize(lighten($colour-sea-light, 15%), 0.5), transparent 14.5rem) 46.8rem calc(22vh + 14.4rem) / 28.8rem 2.9rem no-repeat,
+		radial-gradient(transparentize(lighten($colour-sea-light, 15%), 0.5), transparent 28.8rem) 7.2rem calc(22vh + 14.4rem) / 57.6rem 7.2rem no-repeat,
 	;
 
 	background: $heading, $stars, $texture,
