@@ -7,7 +7,7 @@ grid-area: 1 / 1 / 2 / -1;
 margin: #{-$site-padding} #{-$site-padding} 0 #{-$site-padding};
 height: calc(20vh + 33.25vw + 12.5rem);
 @media (min-width: $mq-wide) {
-	height: calc(20vh + 43.64rem);
+	height: calc(20vh + 36.45rem);
 }
 
 // Start background image
@@ -32,12 +32,18 @@ $stars:
 	#{star(2, 10, 100)}
 ;
 
-background: $heading, $stars,
+$texture:
+	radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 25vw) 0vw calc(22vh + 22vw) / 50vw 8vw no-repeat,
+	radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 20vw) 65vw calc(22vh + 20vw) / 40vw 4vw no-repeat,
+	radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 40vw) 10vw calc(22vh + 20vw) / 80vw 10vw no-repeat,
+;
+
+background: $heading, $stars, $texture,
 	linear-gradient(
-		$colour-sky calc(20vh + 18.25vw),
-		$colour-sea-light calc(22vh + 18.25vw),
-		$colour-sea-light calc(22vh + 30vw),
-		darken($colour-sea-light, 10%) calc(24vh + 30vw),
+		$colour-sky calc(20vh + 19.25vw),
+		$colour-sea-light calc(22vh + 19.25vw),
+		$colour-sea-light calc(22vh + 31vw),
+		darken($colour-sea-light, 10%) calc(24vh + 31vw),
 		transparent
 	)
 ;
@@ -62,12 +68,18 @@ background: $heading, $stars,
 		#{star(2, 10, 100)}
 	;
 
-	background: $heading, $stars,
+	$texture:
+		radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 18rem) 0rem calc(22vh + 15.9rem) / 36rem 5.8rem no-repeat,
+		radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 14.5rem) 46.8rem calc(22vh + 14.4rem) / 28.8rem 2.9rem no-repeat,
+		radial-gradient(hsla(0, 100%, 100%, 0.1), transparent 28.8rem) 7.2rem calc(22vh + 14.4rem) / 57.6rem 7.2rem no-repeat,
+	;
+
+	background: $heading, $stars, $texture,
 		linear-gradient(
-			$colour-sky calc(20vh + 13.15rem),
-			$colour-sea-light calc(22vh + 13.15rem),
-			$colour-sea-light calc(22vh + 21.6rem),
-			darken($colour-sea-light, 10%) calc(24vh + 21.6rem),
+			$colour-sky calc(20vh + 13.85rem),
+			$colour-sea-light calc(22vh + 13.85rem),
+			$colour-sea-light calc(22vh + 22.3rem),
+			darken($colour-sea-light, 10%) calc(24vh + 22.3rem),
 			transparent
 		)
 	;
