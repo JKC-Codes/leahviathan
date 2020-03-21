@@ -1,12 +1,79 @@
 #page-header {
 
+$mq-wide: 90rem;
+
 position: relative;
 grid-area: 1 / 1 / 2 / -1;
 margin: #{-$site-padding} #{-$site-padding} 0 #{-$site-padding};
-padding-bottom: 20vw;
-@media(min-width: $mq-wide) {
-	padding-bottom: 14.5rem;
+height: calc(20vh + 33.25vw + 12.5rem);
+@media (min-width: $mq-wide) {
+	height: calc(20vh + 43.64rem);
 }
+
+// Start background image
+
+$heading: url("../img/header-neon.png") center 20vh / 70vw 17.5vw no-repeat;
+$colour-sky: hsl(280, 50%, 5%);
+
+@function star($size, $x, $y) {
+	@return 'radial-gradient(hsl(280, 2.5%, 50%), ' $colour-sky $size * 0.05 +'rem)' $x +'% calc((12vh + 11vw) * ' $y / 100 ') / ' $size * 0.1 +'rem' $size * 0.1 +'rem no-repeat';
+}
+$stars:
+	#{star(5, 87, 17)},
+	#{star(1, 12, 20)},
+	#{star(1, 68, 20)},
+	#{star(2, 53, 28)},
+	#{star(4, 30, 50)},
+	#{star(3, 94, 63)},
+	#{star(2, 56, 65)},
+	#{star(3, 12, 86)},
+	#{star(2, 45, 93)},
+	#{star(2, 75, 98)},
+	#{star(2, 10, 100)}
+;
+
+background: $heading, $stars,
+	linear-gradient(
+		$colour-sky calc(20vh + 18.25vw),
+		$colour-sea-light calc(22vh + 18.25vw),
+		$colour-sea-light calc(22vh + 30vw),
+		darken($colour-sea-light, 10%) calc(24vh + 30vw),
+		transparent
+	)
+;
+
+@media (min-width: $mq-wide) {
+	$heading: url("../img/header-neon.png") center 20vh / 50.4rem 12.6rem no-repeat;
+
+	@function star($size, $x, $y) {
+		@return 'radial-gradient(hsl(280, 2.5%, 50%), ' $colour-sky $size * 0.05 +'rem)' $x +'% calc((12vh + 8rem) * ' $y / 100 ') / ' $size * 0.1 +'rem' $size * 0.1 +'rem no-repeat';
+	}
+	$stars:
+		#{star(5, 87, 17)},
+		#{star(1, 12, 20)},
+		#{star(1, 68, 20)},
+		#{star(2, 53, 28)},
+		#{star(4, 30, 50)},
+		#{star(3, 94, 63)},
+		#{star(2, 56, 65)},
+		#{star(3, 12, 86)},
+		#{star(2, 45, 93)},
+		#{star(2, 75, 98)},
+		#{star(2, 10, 100)}
+	;
+
+	background: $heading, $stars,
+		linear-gradient(
+			$colour-sky calc(20vh + 13.15rem),
+			$colour-sea-light calc(22vh + 13.15rem),
+			$colour-sea-light calc(22vh + 21.6rem),
+			darken($colour-sea-light, 10%) calc(24vh + 21.6rem),
+			transparent
+		)
+	;
+}
+
+// End background image
 
 .animations-toggle {
 	position: absolute;
@@ -18,39 +85,35 @@ h1 {
 	@extend %hidden-visually;
 }
 
-.neon-header {
-	display: block;
-	margin: 20vh auto 0;
-	width: 70vw;
-
-	@media(min-width: $mq-wide) {
-		width: 50rem;
-	}
-}
-
 .social-icons {
-	$icon-width: 5vw;
-
+	position: absolute;
+	top: calc(20vh + 18.25vw);
+	left: 0;
+	right: 0;
 	@extend %row;
-	justify-content: space-between;
-	max-width: $icon-width * 5.5;
-	margin: (-1.75vw + $icon-width / 2) auto 0;
-	position: relative;
+	justify-content: center;
 
 	@media(min-width: $mq-wide) {
-		max-width: 19.8rem;
-		margin-top: 0.6rem;
+		top: calc(20vh + 13.14rem);
 	}
 
 	> a,
 	> a > img {
-		width: $icon-width;
-		height: $icon-width;
+		width: 5vw;
+		height: 5vw;
 		border-radius: 25%;
+
+		&:not(:last-of-type) {
+			margin-right: 2.5vw;
+		}
 
 		@media(min-width: $mq-wide) {
 			width: 3.6rem;
 			height: 3.6rem;
+
+			&:not(:last-of-type) {
+				margin-right: 1.8rem;
+			}
 		}
 	}
 
