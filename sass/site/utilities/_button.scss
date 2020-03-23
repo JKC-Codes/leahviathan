@@ -1,4 +1,27 @@
-button%alt {
+%button {
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	padding: 0 0.4rem;
+	border: 0.05rem solid white;
+	border-radius: $border-rounded;
+	background-color: black;
+	text-decoration: none;
+	line-height: 1.5;
 	color: white;
-	background-color: $colour-alt;
+
+	&:hover {
+		background: darkgrey;
+	}
+
+	&:active {
+		background: grey;
+		transform: translate(0.05rem, 0.05rem);
+	}
+
+	&:focus {
+		outline: none;
+		border-style: dashed;
+		border-color: hsl(160, 90%, 40%);
+	}
 }
