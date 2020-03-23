@@ -1,0 +1,26 @@
+#bubble {
+
+border-radius: 50%;
+text-align: left;
+padding: 3rem 4rem;
+width: 24rem;
+height: 24rem;
+background: hsla(0,100%,100%,0.1);
+
+h2 {
+	margin-top: 0;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1.2rem;
+	line-height: 1;
+	text-align: center;
+}
+
+.button {
+	@extend %button;
+	display: block;
+	margin: auto;
+	width: 10rem;
+}
+
+}
