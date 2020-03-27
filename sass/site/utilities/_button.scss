@@ -1,27 +1,21 @@
 %button {
 	cursor: pointer;
 	display: inline-block;
-	text-align: center;
-	padding: 0 0.4rem;
-	border: 0.05rem solid white;
+	padding: 0.5rem 1rem;
+	border: 0.05rem solid;
+	border-color: $colour-brand $colour-alt $colour-alt $colour-brand;
 	border-radius: $border-rounded;
-	background-color: black;
-	text-decoration: none;
 	line-height: 1.5;
+	text-align: center;
 	color: white;
+	background-image: linear-gradient(to bottom right, $colour-alt-subtle, $colour-brand-subtle);
 
 	&:hover {
-		background: darkgrey;
+		background: $colour-sea-light;
 	}
 
 	&:active {
-		background: grey;
+		border-color: $colour-alt $colour-brand $colour-brand $colour-alt;
 		transform: translate(0.05rem, 0.05rem);
-	}
-
-	&:focus {
-		outline: none;
-		border-style: dashed;
-		border-color: hsl(160, 90%, 40%);
 	}
 }
