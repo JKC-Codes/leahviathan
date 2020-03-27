@@ -7,7 +7,7 @@
 	border-radius: $border-rounded;
 	line-height: 1.5;
 	text-align: center;
-	color: white;
+	color: inherit;
 	background-image: linear-gradient(to bottom right, $colour-alt-subtle, $colour-brand-subtle);
 
 	&:hover {
