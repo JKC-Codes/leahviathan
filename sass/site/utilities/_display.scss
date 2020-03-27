@@ -12,3 +12,9 @@
 	clip-path: inset(50%) !important;
 	white-space: nowrap !important;
 }
+
+// Default outline style for all focusable elements
+%outline-focus {
+	outline: 0.05rem dashed hsl(160, 90%, 40%);
+	outline-offset: 0.1rem;
+}

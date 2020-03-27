@@ -50,7 +50,6 @@
 			transition: transform 75ms;
 			outline: none;
 
-			// Outline styles when checkbox is focussed
 			&:focus ~ span:first-of-type::before {
 				content: '';
 				position: absolute;
@@ -58,8 +57,7 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				outline: 0.05rem dashed hsl(160, 90%, 40%);
-				outline-offset: 0.1rem;
+				@extend %outline-focus;
 			}
 		}
 	}
