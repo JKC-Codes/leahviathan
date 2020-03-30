@@ -17,4 +17,12 @@
 	&:active {
 		transform: translate(0.05rem, 0.05rem);
 	}
+
+	&:link {
+		color: lighten($colour-text, 5%);
+	}
+
+	&:visited {
+		color: $colour-text;
+	}
 }

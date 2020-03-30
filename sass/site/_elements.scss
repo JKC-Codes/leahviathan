@@ -23,11 +23,6 @@ body {
 	display: grid;
 	grid-template: min-content 1fr min-content / $site-gutter 1fr $site-gutter;
 	background:
-		// radial-gradient(
-		// 	circle farthest-corner at calc(100% - 10rem) 8rem,
-		// 	hsl(60, 25%, 50%),
-		// 	transparent 15rem
-		// ),
 		linear-gradient(
 			$colour-sea calc((100% - 5rem) * 0.9),
 			$colour-sea-dark calc(100% - 5rem)
@@ -49,7 +44,7 @@ h6 {
 }
 
 a:link {
-	color: white;
+	color: lighten($colour-text, 5%);
 }
 
 a:visited {
@@ -57,11 +52,11 @@ a:visited {
 }
 
 a:hover {
-	color: yellow;
+	color: $colour-brand;
 }
 
 a:active {
-	color: orange;
+	color: $colour-alt;
 }
 
 img {
