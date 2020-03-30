@@ -10,12 +10,11 @@
 	color: inherit;
 	background-image: linear-gradient(to bottom right, $colour-alt-subtle, $colour-brand-subtle);
 
-	&:hover {
-		background: $colour-sea-light;
+	&:hover:not(:active) {
+		border-color: $colour-alt $colour-brand $colour-brand $colour-alt;
 	}
 
 	&:active {
-		border-color: $colour-alt $colour-brand $colour-brand $colour-alt;
 		transform: translate(0.05rem, 0.05rem);
 	}
 }
