@@ -36,7 +36,7 @@ function html() {
 	.pipe(gulp.dest(destination));
 }
 
-sass.compiler = require('dart-sass');
+sass.compiler = require('sass');
 function css() {
 	return gulp.src('sass/**/*.scss')
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))

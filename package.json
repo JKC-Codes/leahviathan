@@ -6,7 +6,6 @@
   "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "*",
-    "dart-sass": "*",
     "del": "*",
     "delay-cli": "*",
     "gulp": "*",
@@ -15,7 +14,8 @@
     "gulp-sass": "*",
     "gulp-terser": "*",
     "netlify-cli": "*",
-    "npm-run-all": "*"
+    "npm-run-all": "*",
+    "sass": "*"
   },
   "scripts": {
     "eleventy": "eleventy --serve",
@@ -25,21 +25,5 @@
     "restart": "npm-run-all --parallel sass eleventy"
   },
   "author": "John Kemp-Cruz",
-  "license": "",
-  "browserslist": [
-    "last 2 chrome versions",
-    "last 2 chromeandroid versions",
-    "last 2 safari versions",
-    "last 2 ios versions",
-    "last 2 firefox versions",
-    "last 2 firefoxandroid versions",
-    "last 2 opera versions",
-    "last 2 operamobile versions",
-    "last 2 operamini versions",
-    "last 2 edge versions",
-    "last 2 samsung versions",
-    "last 2 android versions",
-    ">0.25%",
-    "not dead"
-  ]
+  "license": ""
 }
