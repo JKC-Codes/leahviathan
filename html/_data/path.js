@@ -1,9 +1,8 @@
-let project = require('./project');
-let pathPrefix = project.name + "/"
+const sitePath = '/leahviathan';
 
 module.exports = {
-  css: pathPrefix + 'css',
-  img: pathPrefix + 'img',
-  js: pathPrefix + 'js',
-  root: pathPrefix + ''
+	site: sitePath,
+  css: sitePath + '/css',
+  img: sitePath + '/img',
+  js: sitePath + '/js'
 }
