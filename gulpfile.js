@@ -10,7 +10,7 @@ const
 	shell = require('child_process').exec
 ;
 
-function temp() {
+function removeTemp() {
 	return del('./temp/');
 }
 
@@ -74,7 +74,7 @@ function redirect() {
 		.pipe(gulp.dest('./temp/'));
 }
 
-function delDocs() {
+function removeDocs() {
 	return del('./docs/**');
 }
 
@@ -89,7 +89,6 @@ function git() {
 
 
 exports.stage = gulp.series(
-	temp,
 	eleventy,
 	gulp.parallel(
 		html,
@@ -101,15 +100,14 @@ exports.stage = gulp.series(
 	netlify,
 	gulp.parallel(
 		browser,
-		temp
+		removeTemp
 	)
 );
 
 exports.publish = gulp.series(
 	gulp.parallel(
-		delDocs,
+		removeDocs,
 		gulp.series(
-			temp,
 			eleventy,
 			gulp.parallel(
 				html,
@@ -120,6 +118,6 @@ exports.publish = gulp.series(
 		)
 	),
 	createDocs,
-	temp,
+	removeTemp,
 	git
 );
