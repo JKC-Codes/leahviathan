@@ -6,7 +6,6 @@
   "dependencies": {},
   "devDependencies": {
     "del": "*",
-    "delay-cli": "*",
     "gulp": "*",
     "gulp-htmlmin": "*",
     "gulp-imagemin": "*",
@@ -18,8 +17,8 @@
   "scripts": {
     "eleventy": "eleventy --serve",
     "sass": "sass sass:staging/leahviathan/css --watch --source-map-urls=absolute",
-    "browser": "delay 1.5 && start firefox.exe -private-window http://localhost:8080/leahviathan/",
-    "start": "npm-run-all --parallel sass eleventy browser",
+    "browser": "start firefox.exe -private-window http://localhost:8080/leahviathan/",
+    "start": "npm-run-all --parallel eleventy browser sass",
     "restart": "npm-run-all --parallel sass eleventy"
   },
   "author": "John Kemp-Cruz",
