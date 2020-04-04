@@ -5,7 +5,6 @@
   "main": "",
   "dependencies": {},
   "devDependencies": {
-    "@11ty/eleventy": "*",
     "del": "*",
     "delay-cli": "*",
     "gulp": "*",
@@ -13,7 +12,6 @@
     "gulp-imagemin": "*",
     "gulp-sass": "*",
     "gulp-terser": "*",
-    "netlify-cli": "*",
     "npm-run-all": "*",
     "sass": "*"
   },

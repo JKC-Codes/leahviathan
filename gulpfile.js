@@ -1,6 +1,7 @@
 const
 	gulp = require('gulp'),
-	destination = "./temp/leahviathan/",
+	path = require('./html/_data/path'),
+	destination = `./temp${path.site}/`,
 	del = require('del'),
 	htmlmin = require('gulp-htmlmin'),
 	sass = require('gulp-sass'),
@@ -14,7 +15,7 @@ function temp() {
 }
 
 function eleventy() {
-	return shell('eleventy --output="' + destination + '"');
+	return shell(`eleventy --output="${destination}"`);
 }
 
 function html() {
@@ -65,7 +66,7 @@ function netlify() {
 }
 
 function browser() {
-	return shell('start firefox.exe -private-window https://jkc-codes.netlify.app/leahviathan');
+	return shell(`start firefox.exe -private-window https://jkc-codes.netlify.app${path.site}`);
 }
 
 function redirect() {
@@ -78,7 +79,7 @@ function delDocs() {
 }
 
 function createDocs() {
-	return gulp.src('./temp/leahviathan/**')
+	return gulp.src(destination + '**')
 		.pipe(gulp.dest('./docs/'));
 }
 
