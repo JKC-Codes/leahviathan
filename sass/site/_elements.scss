@@ -8,6 +8,11 @@
 	@extend %outline-focus;
 }
 
+*::selection {
+	background-color: $colour-brand;
+	color: $colour-text-light;
+}
+
 html {
 	min-height: 100vh;
 	color: $colour-text;
