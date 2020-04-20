@@ -1,5 +1,30 @@
-<?xml version="1.0"?><svg id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
-	.st0{fill:#6441A5;}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+<?xml version="1.0" ?>
+<svg
+	style = "enable-background: new 0 0 512 512;"
+	version = "1.1"
+	viewBox = "0 0 512 512"
+	xml:space = "preserve"
+	xmlns = "http://www.w3.org/2000/svg"
+	xmlns:xlink = "http://www.w3.org/1999/xlink"
+>
+
+<style type="text/css">
+	.st0{
+		fill: #6441A5;
+	}
+	.st1{
+		fill-rule: evenodd;
+		clip-rule: evenodd;
+		fill: #FFFFFF;
+	}
 </style>
-<g id="g8"><path class="st0" d="M512,397.1c0,63.5-51.5,114.9-114.9,114.9H114.9C51.5,512,0,460.5,0,397.1V114.9C0,51.5,51.5,0,114.9,0h282.2   C460.5,0,512,51.5,512,114.9V397.1z" id="path4"/><path d="M317.75,369h-61.5l-30.75,41h-41v-41h-71.75V154.775l20.5-52.275h266.5v184.5L317.75,369z M369,276.75V133.25H153.75v194.75h61.5v41l41-41h61.5L369,276.75z" fill="#FFFFFF" id="Dialog"/><rect fill="#FFFFFF" height="82" id="_x7C_" width="31" x="287" y="185"/><rect fill="#FFFFFF" height="82" id="_x7C__2_" width="31" x="226" y="185"/></g></svg>
+
+<g>
+	<rect class="st0" width="512" height="512" />
+
+	<path d="M317.75,369h-61.5l-30.75,41h-41v-41h-71.75V154.775l20.5-52.275h266.5v184.5L317.75,369z M369,276.75V133.25H153.75v194.75h61.5v41l41-41h61.5L369,276.75z" fill="#FFFFFF"/>
+	<rect fill="#FFFFFF" height="82" width="31" x="287" y="185"/>
+	<rect fill="#FFFFFF" height="82" width="31" x="226" y="185"/>
+</g>
+
+</svg>
