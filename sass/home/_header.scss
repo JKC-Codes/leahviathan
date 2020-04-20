@@ -9,6 +9,10 @@
 		#1fa2ad calc(100% - 1rem),
 		#105c64
 	);
+	padding: $gap $gap 0;
+	display: grid;
+	justify-items: center;
+	align-items: start;
 
 	.animations-toggle[data-checked] {
 		color: $colour-text-dark;
@@ -25,6 +29,26 @@
 		.bracket-right {
 			display: inline-block;
 			transform: translateY(-0.2ch);
+		}
+	}
+
+	.social-icons {
+		@extend %row;
+		justify-content: space-between;
+		min-width: 12rem;
+		width: 75vw;
+		max-width: 16rem;
+
+		& a,
+		& img {
+			display: block;
+			border-radius: 25%;
+			min-width: 2.4rem;
+			min-height: 2.4rem;
+			width: 15vw;
+			height: 15vw;
+			max-width: 3.2rem;
+			max-height: 3.2rem;
 		}
 	}
 
