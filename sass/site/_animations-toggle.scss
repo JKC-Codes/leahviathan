@@ -2,15 +2,14 @@
 
 	display: none; // Hide if JavaScript isn't running
 
-	$switch-height: 1rem;
+	$switch-height: 1.1rem;
 
 &[data-checked] {
-	grid-column: 1 /3;
 	justify-self: end;
-	@extend %row;
+	display: inline-flex;
 	color: $colour-text-light;
 	font-size: 80%;
-	line-height: 1;
+	line-height: 1.4;
 
 	& .switch {
 		position: relative;
@@ -21,7 +20,7 @@
 		color: white;
 		width: $switch-height * 2;
 		height: $switch-height;
-		padding: 0 0.25rem 0.15rem;
+		padding: 0 0.25rem 0.1rem;
 		margin-left: 0.5rem;
 		border-radius: $switch-height;
 
@@ -36,7 +35,7 @@
 			right: -0.05rem;
 			width: $switch-height + 0.1rem;
 			height: $switch-height + 0.1rem;
-			background: hsl(220, 20%, 60%);
+			background: #c3c9e2;
 			border-radius: 50%;
 			transition: transform 75ms;
 		}
@@ -63,11 +62,11 @@
 }
 
 &[data-checked="true"] .switch {
-	background: hsla(160, 50%, 40%, 0.75);
+	background: #006c54;
 }
 
 &[data-checked="false"] .switch {
-	background: hsla(310, 75%, 50%, 0.5);
+	background: #a700b0;
 
 	&::after {
 		transform: translateX(-$switch-height);
