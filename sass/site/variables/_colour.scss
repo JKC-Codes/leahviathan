@@ -1,11 +1,10 @@
-$colour-text: hsl(245, 25%, 90%);
+$colour-text-light: #e7fcff;
+$colour-text-dark: #002024;
+$colour-text: $colour-text-light;
 
-$colour-brand: hsl(175, 70%, 40%);
-$colour-brand-subtle: darken(desaturate($colour-brand, 23%), 20%);
+$colour-brand: #850071;
+$colour-brand-lighter: #a42e8d;
 
-$colour-alt: hsl(280, 60%, 50%);
-$colour-alt-subtle: darken(desaturate($colour-alt, 20%), 25%);
-
-$colour-sea: hsl(245, 40%, 10%);
-$colour-sea-light: hsl(180, 50%, 25%);
-$colour-sea-dark: hsl(245, 50%, 2.5%);
+$colour-sea: #004f57;
+$colour-sea-light: #29757f;
+$colour-sea-dark: #002b30;

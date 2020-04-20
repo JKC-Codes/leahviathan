@@ -11,9 +11,8 @@
 html {
 	min-height: 100vh;
 	color: $colour-text;
-	font: $font;
+	font: 125%/1.5 'Open Sans', sans-serif;
 	overflow-wrap: break-word;
-	background: $colour-sea-dark;
 }
 
 body {
@@ -21,17 +20,24 @@ body {
 	margin: 0 auto;
 	padding: $site-padding;
 	display: grid;
-	grid-template: min-content 1fr min-content / $site-gutter 1fr $site-gutter;
-	background:
-		linear-gradient(
-			$colour-sea calc((100% - 5rem) * 0.9),
-			$colour-sea-dark calc(100% - 5rem)
-		)
-	;
+	grid-template: min-content 1fr min-content / 1fr;
+	background: red;
+}
+
+nav {
+	grid-row-start: 1;
+}
+
+header {
+	grid-row-start: 2;
 }
 
 main {
-	grid-area: 2 / 2 / -2 / 3;
+	grid-row-start: 3;
+}
+
+footer {
+	grid-row-start: 4;
 }
 
 h1,
@@ -40,11 +46,12 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
 }
 
 a:link {
-	color: lighten($colour-text, 5%);
+	color: white;
 }
 
 a:visited {
@@ -52,11 +59,11 @@ a:visited {
 }
 
 a:hover {
-	color: $colour-brand;
+	color: $colour-brand-lighter;
 }
 
 a:active {
-	color: $colour-alt;
+	color: $colour-brand;
 }
 
 img {

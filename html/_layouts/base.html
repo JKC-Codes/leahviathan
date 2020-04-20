@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 {% include head.html %}
-<body id="page-body">
-	{% if page.url != "/" %}{% include nav.html %}{% endif %}
+<body>
+	{% include nav.html %}
 	{% if page.url != "/" %}{% include header.html %}{% endif %}
 	{{ content }}
 	{% include footer.html %}

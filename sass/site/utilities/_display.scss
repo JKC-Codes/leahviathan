@@ -13,8 +13,8 @@
 	white-space: nowrap !important;
 }
 
-// Default outline style for all focusable elements
+// Default outline style for focusable elements
 %outline-focus {
-	outline: 0.05rem dashed hsl(160, 90%, 40%);
+	outline: 0.05rem dashed $colour-brand-lighter;
 	outline-offset: 0.1rem;
 }

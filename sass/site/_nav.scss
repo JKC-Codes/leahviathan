@@ -1,32 +1,20 @@
 #site-nav {
 
-grid-area: 1 / 1 / -2 / 2;
-padding-right: 1rem;
-
-ul {
-	position: sticky;
-	top: 1rem;
-	left: 0;
-	list-style: none;
-	margin: 0;
-	padding: 0 0 0 2.25ch;
-}
-
 [aria-current="page"] {
 	position: relative;
-}
 
-[aria-current="page"]::before {
-	position: absolute;
-	display: block;
-	content: '';
-	background: url("/leahviathan/img/squid.png");
-	background-size: contain;
-	transform: translateY(-50%);
-	top: 50%;
-	right: calc(100% + 0.5ch);
-	width: 1.75ch;
-	height: 1.75ch;
+	::before {
+		position: absolute;
+		display: block;
+		content: '';
+		background: url("/leahviathan/img/squid.png");
+		background-size: contain;
+		transform: translateY(-50%);
+		top: 50%;
+		right: calc(100% + 0.5ch);
+		width: 1.75ch;
+		height: 1.75ch;
+	}
 }
 
 }
