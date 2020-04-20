@@ -5,3 +5,11 @@
 	}
 
 }
+
+#home-header {
+
+	.animations-toggle {
+		@extend %animations-toggle;
+	}
+
+}
