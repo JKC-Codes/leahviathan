@@ -25,6 +25,14 @@
 		letter-spacing: 0.1ch;
 		color: $colour-brand-lighter;
 
+		@media(min-width: 20rem) {
+			font-size: 15.65vw;
+		}
+
+		@media(min-width: 40rem) {
+			font-size: 5rem;
+		}
+
 		.bracket-left,
 		.bracket-right {
 			display: inline-block;
@@ -33,11 +41,17 @@
 	}
 
 	.social-icons {
+		$mediaQuery: 30rem;
+		$icon-size: 10vw;
+
 		@extend %row;
 		justify-content: space-between;
 		min-width: 12rem;
-		width: 75vw;
 		max-width: 16rem;
+
+		@media(min-width: $mediaQuery) {
+			width: $icon-size * 5;
+		}
 
 		& a,
 		& img {
@@ -45,10 +59,13 @@
 			border-radius: 25%;
 			min-width: 2.4rem;
 			min-height: 2.4rem;
-			width: 15vw;
-			height: 15vw;
 			max-width: 3.2rem;
 			max-height: 3.2rem;
+
+			@media(min-width: $mediaQuery) {
+				width: $icon-size;
+				height: $icon-size;
+			}
 		}
 	}
 
