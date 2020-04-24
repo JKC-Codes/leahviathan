@@ -2,27 +2,24 @@
 	cursor: pointer;
 	display: inline-block;
 	padding: 0.5rem 1rem;
-	border: 0.05rem solid;
-	border-color: $colour-brand-lighter;
+	border: 0.05rem solid $colour-contrast;
 	border-radius: $border-rounded;
+	background: $colour-brand;
+	color: white;
 	line-height: 1.5;
 	text-align: center;
-	color: $colour-text-light;
-	background: $colour-brand;
+
+	&:link,
+	&:visited,
+	&:hover:not(:active) {
+		color: white;
+	}
 
 	&:hover:not(:active) {
-		background: $colour-brand-lighter;
+		border-color: white;
 	}
 
 	&:active {
 		transform: translate(0.05rem, 0.05rem);
-	}
-
-	&:link {
-		color: currentColor;
-	}
-
-	&:visited {
-		color: currentColor;
 	}
 }
