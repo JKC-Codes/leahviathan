@@ -27,3 +27,21 @@ toggle.addEventListener('change', function() {
 	checkbox.checked ? setPreference('no-preference') : setPreference('reduce');
 	updateToggle();
 })
+
+
+
+
+
+var button = document.querySelector('#site-nav-button');
+var text = document.querySelector('#site-nav-button-text');
+button.setAttribute('aria-expanded', 'false');
+button.addEventListener('click', function(event) {
+	if(button.getAttribute('aria-expanded') === 'true') {
+		button.setAttribute('aria-expanded', 'false');
+		text.textContent = 'Open';
+	}
+	else {
+		button.setAttribute('aria-expanded', 'true');
+		text.textContent = 'Close';
+	}
+});
