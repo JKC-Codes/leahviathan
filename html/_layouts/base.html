@@ -2,9 +2,11 @@
 <html lang="en-GB">
 {% include head.html %}
 <body>
-	{% include nav.html %}
-	{% if page.url != "/" %}{% include header.html %}{% endif %}
-	{{ content }}
+	{% include header.html %}
+	<main>
+		<h1>{{ title }}</h1>
+		{{ content }}
+	</main>
 	{% include footer.html %}
 </body>
 </html>
