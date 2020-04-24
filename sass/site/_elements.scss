@@ -9,8 +9,8 @@
 }
 
 *::selection {
-	background-color: $colour-brand;
-	color: $colour-text-light;
+	background-color: $colour-contrast;
+	color: $colour-text-dark;
 }
 
 html {
@@ -25,30 +25,13 @@ body {
 	margin: 0;
 	display: grid;
 	grid-template: min-content 1fr min-content / $gap 1fr $gap;
-	background: red;
+	background: $colour-sea;
 }
 
-nav,
 header,
 main,
 footer {
 	grid-column: 2 / -2;
-}
-
-nav {
-	grid-row: 1;
-}
-
-header {
-	grid-row: 2;
-}
-
-main {
-	grid-row: 3;
-}
-
-footer {
-	grid-row: 4;
 }
 
 h1,
@@ -59,6 +42,56 @@ h5,
 h6 {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
+	text-transform: uppercase;
+	color: white;
+	margin: 0;
+
+	& + p,
+	& + ul {
+		margin-top: 1em;
+	}
+}
+
+p,
+ul {
+	& + h1,
+	& + h2,
+	& + h3,
+	& + h4,
+	& + h5,
+	& + h6 {
+		margin-top: 3rem;
+	}
+}
+
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+	margin-top: 1em;
+}
+
+p {
+	margin: 0;
+}
+
+p + p {
+	margin-top: 2em;
+}
+
+ul {
+	margin: 0;
+	padding: 0 0 0 1em;
+}
+
+ul + p,
+p + ul {
+	margin-top: 1.5em;
+}
+
+li:not(:first-child) {
+	margin-top: 1em;
 }
 
 a:link {
@@ -66,15 +99,15 @@ a:link {
 }
 
 a:visited {
-	color: $colour-text;
+	color: currentColor;
 }
 
-a:hover {
-	color: $colour-brand-lighter;
+a:hover:not(:active) {
+	color: $colour-contrast;
 }
 
 a:active {
-	color: $colour-brand;
+	text-decoration: none;
 }
 
 img {
