@@ -32,15 +32,20 @@ toggle.addEventListener('change', function() {
 
 
 
+var container = document.querySelector('#site-nav');
 var button = document.querySelector('#site-nav-button');
 var text = document.querySelector('#site-nav-button-text');
+delete container.dataset.javascriptActive;
+container.dataset.open = 'false';
 button.setAttribute('aria-expanded', 'false');
 button.addEventListener('click', function(event) {
 	if(button.getAttribute('aria-expanded') === 'true') {
+		container.dataset.open = 'false';
 		button.setAttribute('aria-expanded', 'false');
 		text.textContent = 'Open';
 	}
 	else {
+		container.dataset.open = 'true';
 		button.setAttribute('aria-expanded', 'true');
 		text.textContent = 'Close';
 	}
