@@ -1,20 +1,159 @@
 #site-nav {
 
-[aria-current="page"] {
-	position: relative;
+$transition: 0.25s ease-in-out;
 
-	::before {
-		position: absolute;
-		display: block;
-		content: '';
-		background: url("/leahviathan/img/squid.png");
-		background-size: contain;
-		transform: translateY(-50%);
-		top: 50%;
-		right: calc(100% + 0.5ch);
-		width: 1.75ch;
-		height: 1.75ch;
+width: max-content;
+max-width: calc(100vw - #{$gap});
+height: 0rem;
+display: grid;
+grid-template: 1fr / auto auto;
+align-items: start;
+transform: translateX(calc(-100% + 2.5rem + #{$gap}));
+transition: transform  $transition;
+
+&[data-javascript-active="false"] {
+	height: auto;
+	transform: none;
+}
+
+&[data-open="true"] {
+	transform: none;
+}
+
+.menu-button {
+	position: relative;
+	grid-area: 1 / 2;
+	z-index: 2;
+	margin-top: $gap * 1.5;
+	border: 0;
+	padding: 0.25rem;
+	background: none;
+	font-size: 0.7rem;
+	line-height: 1;
+
+	&:hover:not(:active) {
+		background: $colour-sea-light;
 	}
+
+	&[aria-expanded="false"] {
+		background-color: transparent;
+	}
+
+	// Only display when JavaScript has added ARIA attribute
+	display: none;
+	&[aria-expanded] {
+		display: block;
+	}
+
+	&::before {
+		pointer-events: none;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: -$gap * 1.5;
+		left: 0;
+		bottom: -$gap / 2;
+		right: -$gap / 2;
+		background: transparent;
+		border-bottom-right-radius: $border-rounded;
+		transition: background-color $transition;
+	}
+
+	&[aria-expanded="true"]::before {
+		background-color: $colour-sea-dark;
+	}
+
+	&-icon {
+		display: block;
+		width: 1rem;
+		height: 1rem;
+		margin: 0 auto 0.2rem;
+
+		.line-top-left,
+		.line-top-right,
+		.line-mid-left,
+		.line-mid-right,
+		.line-bottom-left,
+		.line-bottom-right {
+			transition: transform $transition;
+			fill: currentColor;
+		}
+
+		.line-top-left {
+			transform-origin: 0% 10px;
+		}
+		.line-top-right {
+			transform-origin: 100% 10px;
+		}
+		.line-mid-left,
+		.line-mid-right {
+			transform-origin: center;
+		}
+		.line-bottom-left {
+			transform-origin: 0% calc(100% - 10px);
+		}
+		.line-bottom-right {
+			transform-origin: 100% calc(100% - 10px);
+		}
+	}
+
+	&[aria-expanded="true"] .menu-button-icon {
+		.line-top-left {
+			transform: translate(5px, -5px) rotate(45deg) scaleX(1.1);
+		}
+
+		.line-top-right {
+			transform: translate(-5px, -5px) rotate(-45deg) scaleX(1.1);
+		}
+
+		.line-mid-left,
+		.line-mid-right {
+			transform: scaleX(0);
+		}
+
+		.line-bottom-left {
+			transform: translate(5px, 5px) rotate(-45deg) scaleX(1.1);
+		}
+
+		.line-bottom-right {
+			transform: translate(-5px, 5px) rotate(45deg) scaleX(1.1);
+		}
+	}
+
+	br {
+		display: block;
+	}
+}
+
+.menu {
+	grid-area: 1 / 1;
+	z-index: 1;
+	padding: $gap * 1.5;
+	border-bottom-right-radius: $border-rounded;
+	background: $colour-sea-dark;
+	list-style-type: none;
+	transition: background-color $transition;
+
+	& [aria-current="page"] {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: '';
+			background: url("/leahviathan/img/squid.png");
+			background-size: contain;
+			transform: translateY(-50%);
+			top: 50%;
+			right: calc(100% + 0.5ch);
+			width: 1.75ch;
+			height: 1.75ch;
+		}
+	}
+}
+
+.menu-button[aria-expanded="false"] ~ .menu {
+	background-color: transparent;
 }
 
 }
