@@ -31,10 +31,6 @@ transition: transform  $transition;
 	font-size: 0.7rem;
 	line-height: 1;
 
-	&:hover:not(:active) {
-		background: $colour-sea-light;
-	}
-
 	&[aria-expanded="false"] {
 		background-color: transparent;
 	}
@@ -45,22 +41,41 @@ transition: transform  $transition;
 		display: block;
 	}
 
-	&::before {
+	&::before,
+	&::after {
 		pointer-events: none;
 		content: '';
 		position: absolute;
-		z-index: -1;
+		background: transparent;
+	}
+
+	&::before {
+		z-index: -2;
 		top: -$gap * 1.5;
 		left: 0;
 		bottom: -$gap / 2;
 		right: -$gap / 2;
-		background: transparent;
 		border-bottom-right-radius: $border-rounded;
 		transition: background-color $transition;
 	}
 
 	&[aria-expanded="true"]::before {
 		background-color: $colour-sea-dark;
+	}
+
+	// Fixes tearing effect when button is pressed
+	&:active[aria-expanded="true"]::before {
+		transform: translateX(-0.05rem);
+	}
+
+	&:hover:not(:active)::after {
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: $border-rounded;
+		background: $colour-sea-light;
 	}
 
 	&-icon {
