@@ -28,9 +28,7 @@ body {
 	background: $colour-sea;
 }
 
-header,
-main,
-footer {
+main {
 	grid-column: 2 / -2;
 }
 

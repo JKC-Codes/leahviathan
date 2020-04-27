@@ -1,5 +1,7 @@
 #site-header {
 
+	grid-area: 1 / 1 / 2 / -1;
+
 	.animations-toggle {
 		@extend %animations-toggle;
 	}
