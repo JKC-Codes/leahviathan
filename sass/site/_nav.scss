@@ -2,7 +2,7 @@
 
 $transition: 0.25s ease-in-out;
 
-height: 2.4rem;
+height: 4rem;
 display: inline-grid;
 grid-template: 1fr / 1fr auto;
 align-items: start;
@@ -137,8 +137,7 @@ z-index: 1;
 .menu {
 	grid-area: 1 / 1;
 	z-index: 1;
-	margin-top: $gap / 2;
-	padding: $gap / 2 calc(#{max($gap, 1rem)} + 1ch) $gap;
+	padding: $gap $gap $gap calc(#{max($gap, 1rem)} + 1ch);
 	border-bottom-right-radius: $border-rounded;
 	background: $colour-sea-dark;
 	list-style-type: none;
