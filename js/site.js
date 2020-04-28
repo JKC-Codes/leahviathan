@@ -17,6 +17,7 @@ else {
 }
 
 // Initialise toggle
+toggle.removeAttribute('hidden');
 updateToggle();
 
 // Listen for switches
