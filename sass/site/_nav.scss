@@ -6,7 +6,7 @@ width: max-content;
 max-width: calc(100vw - #{$gap});
 height: 0rem;
 display: grid;
-grid-template: 1fr / auto auto;
+grid-template: 1fr / 1fr auto;
 align-items: start;
 transform: translateX(calc(-100% + 2.5rem + #{$gap}));
 transition: transform  $transition;
