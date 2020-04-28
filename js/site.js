@@ -35,6 +35,7 @@ toggle.addEventListener('change', function() {
 var container = document.querySelector('#site-nav');
 var button = document.querySelector('#site-nav-button');
 var text = document.querySelector('#site-nav-button-text');
+button.removeAttribute('hidden');
 delete container.dataset.javascriptActive;
 container.dataset.open = 'false';
 button.setAttribute('aria-expanded', 'false');
