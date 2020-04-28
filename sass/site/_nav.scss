@@ -11,6 +11,10 @@ align-items: start;
 transform: translateX(calc(-100% + 2.5rem + #{$gap}));
 transition: transform  $transition;
 
+// Create new stacking context to ensure overlap of animations toggle
+position: relative;
+z-index: 1;
+
 &[data-javascript-active="false"] {
 	height: auto;
 	transform: none;
