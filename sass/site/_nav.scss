@@ -6,7 +6,7 @@ grid-area: 1 / 1;
 z-index: 1; // Ensure nav is always on top of main content
 height: 4rem;
 display: inline-grid;
-grid-template: 1fr / 1fr auto;
+grid-template: 1fr / 1fr min-content;
 align-items: start;
 transform: translateX(calc(-100% + 2.4rem + #{$gap}));
 transition: transform  $transition;
