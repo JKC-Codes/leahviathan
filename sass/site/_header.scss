@@ -1,6 +1,10 @@
 #site-header {
 
 	grid-area: 1 / 1 / 2 / -1;
+	display:grid;
+	grid-template: 1fr / 1fr;
+	justify-items: start;
+	align-items: start;
 
 	.animations-toggle {
 		@extend %animations-toggle;
