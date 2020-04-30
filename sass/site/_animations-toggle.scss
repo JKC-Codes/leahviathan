@@ -1,76 +1,90 @@
 %animations-toggle {
 
-$switch-height: 1.1rem;
+$transition: 0.15s ease-out;
 
-&[data-checked] {
-	display: inline-flex;
-	color: $colour-text-light;
-	font-size: 80%;
-	line-height: 1.4;
+grid-area: 1 / 1;
+justify-self: end;
+font-size: 80%;
+margin: $gap;
 
-	& .switch {
-		position: relative;
+.switch {
+	position: relative; // contains input and toggle
+	top: -0.083em;
+	display: inline-block;
+	width: 2rem;
+	font-size: 75%;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	input {
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+	}
+
+	.labels {
 		@extend %row;
-		align-items:center;
 		justify-content: space-between;
-		font-size: 75%;
-		width: $switch-height * 2;
-		height: $switch-height;
-		padding: 0 0.25rem 0.1rem;
-		margin-left: 0.5rem;
-		border-radius: $switch-height;
+		padding: 0 0.45em 0 0.3em;
+		border-radius: 1rem;
+		background-image: linear-gradient(90deg, #14850a 50%, $colour-brand 50%);
+		background-size: 200% 100%;
+		background-position: 100% 0%;
+		transition: background-position $transition;
 
-		&:hover {
-			cursor: pointer;
+		&::before,
+		&::after {
+			transform: translateY(-0.083em);
+			transition: opacity $transition;
+		}
+
+		&::before {
+			content: 'on';
+			opacity: 0;
 		}
 
 		&::after {
-			content: '';
-			position: absolute;
-			top: -0.05rem;
-			right: -0.05rem;
-			width: $switch-height + 0.1rem;
-			height: $switch-height + 0.1rem;
-			background: #c3c9e2;
-			border-radius: 50%;
-			transition: transform 75ms;
+			content: 'off';
+			opacity: 1;
+		}
+	}
+
+	input:checked ~ .labels {
+		background-position:0%;
+
+		&::before {
+			opacity: 1;
 		}
 
-		input {
-			position: absolute;
-			top: 50%;
-			right: 0;
-			transform: translate(-0.15rem, -50%) scale(0.1);
-			transition: transform 75ms;
-			outline: none;
-
-			&:focus ~ span:first-of-type::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				@extend %outline-focus;
-			}
+		&::after {
+			opacity: 0;
 		}
+	}
+
+	.toggle {
+		$offset: 1px;
+
+		position: absolute;
+		top: -$offset;
+		right: -$offset;
+		transition: transform $transition;
+		transform: translateX(calc(-1rem - #{$offset * 2}));
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		background: $colour-minimal;
+	}
+
+	input:checked ~ .toggle {
+		transform: none;
 	}
 }
 
-&[data-checked="true"] .switch {
-	background: green;
-}
-
-&[data-checked="false"] .switch {
-	background: purple;
-
-	&::after {
-		transform: translateX(-$switch-height);
-	}
-
-	& input {
-		transform: translate(-1.1rem, -50%) scale(0.1);
-	}
+&:hover .toggle {
+	background-color: $colour-contrast;
 }
 
 }
