@@ -5,7 +5,7 @@ $transition: 0.15s ease-out;
 grid-area: 1 / 1;
 justify-self: end;
 font-size: 80%;
-margin: $gap;
+margin: 1rem;
 
 @media (min-width: $mq-header-narrow) {
 	grid-column: 2;

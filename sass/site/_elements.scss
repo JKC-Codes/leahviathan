@@ -24,7 +24,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	display: grid;
-	grid-template: min-content 1fr min-content / $gap 1fr $gap;
+	grid-template: min-content 1fr min-content / 1rem 1fr 1rem;
 	background: $colour-sea;
 }
 

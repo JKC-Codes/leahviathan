@@ -8,7 +8,7 @@ height: 4rem;
 display: inline-grid;
 grid-template: 1fr / 1fr min-content;
 align-items: start;
-transform: translateX(calc(-100% + 2.4rem + #{$gap}));
+transform: translateX(calc(-100% + 3.4rem));
 transition: transform  $transition;
 
 &[data-javascript-active="false"] {
@@ -17,7 +17,7 @@ transition: transform  $transition;
 }
 
 &[data-open="true"] {
-	transform: translateX(#{-$gap});
+	transform: translateX(-1rem);
 }
 
 @media (min-width: $mq-header-narrow) {
@@ -31,8 +31,8 @@ transition: transform  $transition;
 .menu-button {
 	position: relative;
 	grid-area: 1 / 2;
-	margin-top: $gap;
-	margin-left: $gap / 2;
+	margin-top: 1rem;
+	margin-left: 0.5rem;
 	border: 0;
 	padding: 0.25rem;
 	background: none;
@@ -59,10 +59,10 @@ transition: transform  $transition;
 
 	&::before {
 		z-index: -2; // Keep below ::after hover effect and text
-		top: -$gap / 2;
-		left: -$gap; // Extra gap is needed to prevent tearing when button is active
-		bottom: -$gap / 2;
-		right: -$gap / 2;
+		top: -0.5rem;
+		left: -1rem; // Extra gap is needed to prevent tearing when button is active
+		bottom: -0.5rem;
+		right: -0.5rem;
 		border-radius:  0 $border-rounded $border-rounded 0;
 		transition: background-color $transition;
 	}
@@ -147,15 +147,15 @@ transition: transform  $transition;
 
 .menu {
 	grid-area: 1 / 1;
-	margin-left: $gap; // Compensate for translateX(-$gap);
-	padding: $gap $gap $gap calc(#{max($gap, 1rem)} + 1ch);
+	margin-left: 1rem; // Compensate for translateX(-1rem);
+	padding: 1rem 1rem 1rem calc(1rem + 1ch);
 	border-bottom-right-radius: $border-rounded;
 	background: $colour-sea-dark;
 	list-style-type: none;
 	transition: background-color $transition;
 
 	@media (min-width: $mq-header-narrow) {
-		margin-top: $gap;
+		margin-top: 1rem;
 		padding: 0;
 		background: transparent;
 		transition: none;
