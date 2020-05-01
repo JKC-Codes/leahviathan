@@ -1,15 +1,11 @@
-%animations-toggle {
+@mixin animations-toggle {
 
 $transition: 0.15s ease-out;
 
-grid-area: 1 / 1;
-justify-self: end;
+position: absolute;
+top: 0;
+right: 0;
 font-size: 80%;
-margin: 1rem 0 0 1rem;
-
-@media (min-width: $mq-header-narrow) {
-	grid-column: 2;
-}
 
 .switch {
 	position: relative; // contains input and toggle

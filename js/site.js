@@ -1,7 +1,7 @@
 // NAV MENU
-var container = document.querySelector('#site-nav');
-var button = document.querySelector('#site-nav-button');
-var text = document.querySelector('#site-nav-button-text');
+var container = document.querySelector('#site-navigation-menu');
+var button = document.querySelector('#site-navigation-menu-button');
+var text = document.querySelector('#site-navigation-menu-button-text');
 button.removeAttribute('hidden');
 
 delete container.dataset.javascriptActive;

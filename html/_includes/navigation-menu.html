@@ -1,8 +1,8 @@
 {% assign pageSlugs = "/,/info/,/merch/,/stream/,/cosplay/,/blog/,/contact/" | split: ',' %}
 {% assign pageDisplays = "Home,Info,Merch,Stream,Cosplay,Blog,Contact" | split: ',' %}
 
-<nav id="site-nav" data-javascript-active="false">
-	<button type="button" aria-controls="site-nav-content" id="site-nav-button" class="menu-button" hidden>
+<nav class="navigation-menu" id="site-navigation-menu" data-javascript-active="false">
+	<button class="menu-button" type="button" aria-controls="site-navigation-menu-content" id="site-navigation-menu-button" hidden>
 		<svg class="menu-button-icon" width="20" height="20" viewBox="0 0 100 100" aria-hidden="true" >
 			<rect class="line-top-left" x="0" y="0" width="60" height="20"/>
 			<rect class="line-top-right" x="40" y="0" width="60" height="20"/>
@@ -11,9 +11,9 @@
 			<rect class="line-bottom-left" x="0" y="80" width="60" height="20"/>
 			<rect class="line-bottom-right" x="40" y="80" width="60" height="20"/>
 		</svg>
-		<span id="site-nav-button-text">Open menu</span>
+		<span id="site-navigation-menu-button-text">Open menu</span>
 	</button>
-	<ul id="site-nav-content" class="menu">
+	<ul class="menu" id="site-navigation-menu-content">
 		{%- for slug in pageSlugs -%}
 			<li {%- if page.url == slug %} aria-current="page"{%- endif -%}>
 				{%- unless page.url == slug -%}<a href="{{ path.site }}{{ slug }}">{%- endunless -%}
