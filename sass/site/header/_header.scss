@@ -1,7 +1,9 @@
 @import './navigation-menu';
 @import './animations-toggle';
 
-#site-header {
+#page-header {
+
+position: relative;
 
 .navigation-menu {
 	@include navigation-menu;
