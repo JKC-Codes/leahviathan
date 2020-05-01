@@ -8,7 +8,7 @@ height: 4rem;
 display: inline-grid;
 grid-template: 1fr / 1fr min-content;
 align-items: start;
-transform: translateX(calc(-100% + 3.4rem));
+transform: translateX(calc(-100% + 2.4rem));
 transition: transform  $transition;
 
 &[data-javascript-active="false"] {
@@ -17,7 +17,7 @@ transition: transform  $transition;
 }
 
 &[data-open="true"] {
-	transform: translateX(-1rem);
+	transform: translateX(-2rem);
 }
 
 @media (min-width: $mq-header-narrow) {
@@ -156,6 +156,7 @@ transition: transform  $transition;
 
 	@media (min-width: $mq-header-narrow) {
 		margin-top: 1rem;
+		margin-left: 0;
 		padding: 0;
 		background: transparent;
 		transition: none;

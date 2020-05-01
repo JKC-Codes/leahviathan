@@ -1,14 +1,10 @@
 #site-header {
 
-	grid-area: 1 / 1 / 2 / -1;
+	grid-area: 1 / 2 / 2 / -2;
 	display:grid;
 	grid-template: 1fr / 1fr;
 	justify-items: start;
 	align-items: start;
-
-	@media (min-width: $mq-header-narrow) {
-		grid-template-rows: auto auto;
-	}
 
 	.animations-toggle {
 		@extend %animations-toggle;

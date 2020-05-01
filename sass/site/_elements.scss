@@ -26,6 +26,10 @@ body {
 	display: grid;
 	grid-template: min-content 1fr min-content / 1rem 1fr 1rem;
 	background: $colour-sea;
+
+	@media (min-width: $mq-header-narrow) {
+		grid-template-columns: 2rem 1fr 2rem;
+	}
 }
 
 main {
