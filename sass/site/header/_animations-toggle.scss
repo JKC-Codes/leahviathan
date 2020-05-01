@@ -9,10 +9,11 @@ font-size: 80%;
 
 .switch {
 	position: relative; // contains input and toggle
-	top: -0.083em;
+	top: -0.083em; // centre visually
 	display: inline-block;
 	width: 2rem;
 	font-size: 75%;
+	vertical-align: text-bottom; // fix for IE
 
 	&:hover {
 		cursor: pointer;
@@ -53,7 +54,7 @@ font-size: 80%;
 	}
 
 	input:checked ~ .labels {
-		background-position:0%;
+		background-position: 0%;
 
 		&::before {
 			opacity: 1;
@@ -65,13 +66,11 @@ font-size: 80%;
 	}
 
 	.toggle {
-		$offset: 1px;
-
 		position: absolute;
-		top: -$offset;
-		right: -$offset;
+		top: -0.05rem;
+		right: -0.05rem;
 		transition: transform $transition;
-		transform: translateX(calc(-1rem - #{$offset * 2}));
+		transform: translateX(-1.1rem);
 		width: 1rem;
 		height: 1rem;
 		border-radius: 50%;
