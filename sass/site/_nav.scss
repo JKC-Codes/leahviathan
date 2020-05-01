@@ -20,6 +20,14 @@ transition: transform  $transition;
 	transform: translateX(#{-$gap});
 }
 
+@media (min-width: $mq-header-narrow) {
+	&[data-open] { // Extra specificity is required
+		height: auto;
+		transform: none;
+		transition: none;
+	}
+}
+
 .menu-button {
 	position: relative;
 	grid-area: 1 / 2;
@@ -129,6 +137,12 @@ transition: transform  $transition;
 			transform: translate(-5px, 5px) rotate(45deg) scaleX(1.1);
 		}
 	}
+
+	@media (min-width: $mq-header-narrow) {
+		&[aria-expanded] { // Extra specificity is required
+			display: none;
+		}
+	}
 }
 
 .menu {
@@ -139,6 +153,14 @@ transition: transform  $transition;
 	background: $colour-sea-dark;
 	list-style-type: none;
 	transition: background-color $transition;
+
+	@media (min-width: $mq-header-narrow) {
+		margin-top: $gap;
+		padding: 0;
+		background: transparent;
+		transition: none;
+		line-height: 1;
+	}
 
 	& [aria-current="page"] {
 		position: relative;
@@ -154,6 +176,17 @@ transition: transform  $transition;
 			right: calc(100% + 0.5ch);
 			width: 1rem;
 			height: 1rem;
+
+			@media (min-width: $mq-header-narrow) {
+					display: none;
+			}
+		}
+	}
+
+	@media (min-width: $mq-header-narrow) {
+		> li {
+			display: inline-block;
+			margin: 0 1em 1em 0;
 		}
 	}
 }

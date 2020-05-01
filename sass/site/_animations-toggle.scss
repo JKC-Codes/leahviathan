@@ -7,6 +7,10 @@ justify-self: end;
 font-size: 80%;
 margin: $gap;
 
+@media (min-width: $mq-header-narrow) {
+	grid-column: 2;
+}
+
 .switch {
 	position: relative; // contains input and toggle
 	top: -0.083em;

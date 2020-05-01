@@ -6,6 +6,10 @@
 	justify-items: start;
 	align-items: start;
 
+	@media (min-width: $mq-header-narrow) {
+		grid-template-rows: auto auto;
+	}
+
 	.animations-toggle {
 		@extend %animations-toggle;
 	}
