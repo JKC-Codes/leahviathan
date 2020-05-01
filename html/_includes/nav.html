@@ -14,12 +14,12 @@
 		<span id="site-nav-button-text">Open menu</span>
 	</button>
 	<ul id="site-nav-content" class="menu">
-		{%- for slug in pageSlugs %}
-		<li {%- if page.url == slug %} aria-current="page"{% endif -%}>
-			{%- unless page.url == slug -%}<a href="{{ path.site }}{{ slug }}">{%- endunless -%}
-				{{ pageDisplays[forloop.index0] }}
-			{%- unless page.url == slug -%}</a>{%- endunless -%}
-		</li>
-		{%- endfor %}
+		{%- for slug in pageSlugs -%}
+			<li {%- if page.url == slug %} aria-current="page"{%- endif -%}>
+				{%- unless page.url == slug -%}<a href="{{ path.site }}{{ slug }}">{%- endunless -%}
+					{{ pageDisplays[forloop.index0] }}
+				{%- unless page.url == slug -%}</a>{%- endunless -%}
+			</li>
+		{%- endfor -%}
 	</ul>
 </nav>
