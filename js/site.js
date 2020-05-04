@@ -2,20 +2,16 @@
 var container = document.querySelector('#site-navigation-menu');
 var button = document.querySelector('#site-navigation-menu-button');
 var text = document.querySelector('#site-navigation-menu-button-text');
-button.removeAttribute('hidden');
 
-delete container.dataset.javascriptActive;
-container.dataset.open = 'false';
+button.removeAttribute('hidden');
 button.setAttribute('aria-expanded', 'false');
 
 button.addEventListener('click', function(event) {
 	if(button.getAttribute('aria-expanded') === 'true') {
-		container.dataset.open = 'false';
 		button.setAttribute('aria-expanded', 'false');
 		text.textContent = 'Open menu';
 	}
 	else {
-		container.dataset.open = 'true';
 		button.setAttribute('aria-expanded', 'true');
 		text.textContent = 'Close menu';
 	}
