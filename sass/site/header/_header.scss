@@ -3,7 +3,7 @@
 
 #page-header {
 
-position: relative;
+position: relative; // Contains animations toggle
 
 .navigation-menu {
 	@include navigation-menu;
