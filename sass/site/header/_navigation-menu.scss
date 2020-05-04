@@ -21,10 +21,20 @@ align-items: start;
 	margin-right: 100%;
 	transform: translateX(100%);
 
+	&:active {
+		transition-duration: 0s;
+		transform: translate(calc(100% + 0.05rem), 0.05rem);
+	}
+
 	&[aria-expanded="true"] {
 		transform: translateX(0%);
 		margin-left: 0%;
 		margin-right: 0%;
+
+		&:active {
+			transition-duration: 0s;
+			transform: translate(0.05rem, 0.05rem);
+		}
 	}
 
 	&:hover {
