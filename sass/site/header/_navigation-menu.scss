@@ -12,7 +12,7 @@ display: inline flex;
 flex-direction: row-reverse;
 align-items: flex-start;
 
-&[data-js-active="false"] {
+&[data-js-inactive="true"] {
 	position: static;
 	pointer-events: all;
 	margin-right: auto;

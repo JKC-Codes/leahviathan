@@ -3,7 +3,7 @@ var container = document.querySelector('#site-navigation-menu');
 var button = document.querySelector('#site-navigation-menu-button');
 var text = document.querySelector('#site-navigation-menu-button-text');
 
-delete container.dataset.jsActive;
+delete container.dataset.jsInactive;
 button.removeAttribute('hidden');
 button.setAttribute('aria-expanded', 'false');
 
@@ -28,6 +28,13 @@ var checkbox = toggle.querySelector('input');
 var storedPreference = localStorage.getItem('prefersReducedMotion');
 var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+function change() {
+	function setPreference(preference) {
+		localStorage.setItem('prefersReducedMotion', preference);
+	}
+	checkbox.checked ? setPreference('no-preference') : setPreference('reduce');
+}
+
 // Honour previously set preferences
 if (storedPreference != null) {
 	storedPreference == 'reduce' ? checkbox.checked = false : checkbox.checked = true;
@@ -38,12 +45,10 @@ else {
 }
 
 // Listen for switches
-toggle.addEventListener('change', function() {
-	function setPreference(preference) {
-		localStorage.setItem('prefersReducedMotion', preference);
-	}
-	checkbox.checked ? setPreference('no-preference') : setPreference('reduce');
-})
+toggle.addEventListener('change', change);
+
+// Run toggle
+change();
 
 // Show toggle
 toggle.removeAttribute('hidden');
