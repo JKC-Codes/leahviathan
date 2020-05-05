@@ -14,6 +14,7 @@ align-items: flex-start;
 
 &[data-js-active="false"] {
 	position: static;
+	pointer-events: all;
 	margin-right: auto;
 }
 
@@ -124,7 +125,6 @@ align-items: flex-start;
 }
 
 .menu {
-	pointer-events: all;
 	list-style-type: none;
 	border-radius: $border-rounded;
 	margin-top: -1rem;
@@ -150,6 +150,7 @@ align-items: flex-start;
 	}
 
 	&-button[aria-expanded="true"] ~ .menu {
+		pointer-events: all;
 		transform: translateX(0%);
 		opacity: 1;
 	}
