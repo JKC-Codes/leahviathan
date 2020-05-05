@@ -13,6 +13,26 @@
 	color: $colour-text-dark;
 }
 
+@media (prefers-reduced-motion: reduce) {
+	:not(body[data-prefers-reduced-motion="no-preference"]) {
+		*,
+		*::before,
+		*::after {
+			transition-delay: 0s !important;
+			transition-duration: 0s !important;
+		}
+	}
+}
+
+body[data-prefers-reduced-motion="reduce"] {
+	*,
+	*::before,
+	*::after {
+		transition-delay: 0s !important;
+		transition-duration: 0s !important;
+	}
+}
+
 html {
 	min-height: 100vh;
 	color: $colour-text;
