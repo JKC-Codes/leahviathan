@@ -34,7 +34,7 @@ align-items: flex-start;
 	line-height: 1;
 	transition: $transition;
 	transition-property: margin, transform;
-	transform: translateX(calc(100% + 0.5rem));
+	transform: translateX(100%) translateX(0.5rem); // Separation is required for IE
 
 	@media (min-width: $mq-header-narrow) {
 		display: none;
@@ -140,7 +140,7 @@ align-items: flex-start;
 	}
 
 	&-button[aria-expanded] ~ .menu {
-		transform: translateX(calc(1rem - 100%));
+		transform: translateX(1rem) translateX(-100%); // Separation is required for IE
 		opacity: 0;
 
 		@media (min-width: $mq-header-narrow) {
