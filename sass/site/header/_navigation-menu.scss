@@ -12,6 +12,11 @@ display: inline flex;
 flex-direction: row-reverse;
 align-items: flex-start;
 
+&[data-js-active="false"] {
+	position: static;
+	margin-right: auto;
+}
+
 .menu-button {
 	pointer-events: all;
 	border: 0;

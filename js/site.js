@@ -3,6 +3,7 @@ var container = document.querySelector('#site-navigation-menu');
 var button = document.querySelector('#site-navigation-menu-button');
 var text = document.querySelector('#site-navigation-menu-button-text');
 
+delete container.dataset.jsActive;
 button.removeAttribute('hidden');
 button.setAttribute('aria-expanded', 'false');
 
