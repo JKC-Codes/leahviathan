@@ -3,7 +3,11 @@
 
 #page-header {
 
-position: relative; // Contains animations toggle
+@extend %row;
+justify-content: flex-end;
+align-items: flex-start;
+
+min-height: 2.4rem; // Navigation menu height
 
 .navigation-menu {
 	@include navigation-menu;
