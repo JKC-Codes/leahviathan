@@ -1,49 +1,49 @@
 @mixin navigation-menu {
 
-$transition: 0.25s ease-in-out;
+$transition: 0.25s ease-out;
 
-position: relative; // Enables z-index
-z-index: 1; // Always be on top of animations toggle
+position: absolute;
+top: 1rem;
+left: 0rem;
+z-index: 1; // Overlap animations toggle
+pointer-events: none; // Prevent blocking of animations toggle
 display: inline-flex;
 display: inline flex;
 flex-direction: row-reverse;
-align-items: start;
+align-items: flex-start;
 
 .menu-button {
+	pointer-events: all;
 	border: 0;
-	padding: 0.25rem;
+	border-radius: $border-rounded;
+	padding: 0.5rem;
+	margin-top: -0.5rem;
+	margin-left: -100%;
+	margin-right: 100%;
 	background: none;
 	font-size: 0.7rem;
 	line-height: 1;
 	transition: $transition;
 	transition-property: margin, transform;
-	margin-left: -100%;
-	margin-right: 100%;
-	transform: translateX(100%);
-
-	&:active {
-		transition-duration: 0s;
-		transform: translate(calc(100% + 0.05rem), 0.05rem);
-	}
-
-	&[aria-expanded="true"] {
-		transform: translateX(0%);
-		margin-left: 0%;
-		margin-right: 0%;
-
-		&:active {
-			transition-duration: 0s;
-			transform: translate(0.05rem, 0.05rem);
-		}
-	}
-
-	&:hover {
-		background: $colour-sea-light;
-	}
+	transform: translateX(calc(100% + 0.5rem));
 
 	// Only display when JavaScript has added ARIA attribute
 	&:not([aria-expanded]) {
 		display: none;
+	}
+
+	&[aria-expanded="true"] {
+		z-index: 1; // Overlap menu items
+		transform: translateX(0%);
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		margin-left: 0%;
+		margin-right: 0%;
+		background: $colour-sea-dark;
+	}
+
+	&:hover {
+		background: $colour-sea-light;
 	}
 
 	@media (min-width: $mq-header-narrow) {
@@ -115,16 +115,23 @@ align-items: start;
 }
 
 .menu {
+	pointer-events: all;
 	list-style-type: none;
-	transition: transform $transition;
+	border-radius: $border-rounded;
+	margin-top: -1rem;
+	padding: 1rem 1rem 1rem calc(1rem + 1ch);
+	background: $colour-sea-dark;
+	transition: $transition;
+	transition-property: transform, opacity, background-color;
 
 	&-button[aria-expanded] ~ .menu {
-		transform: translateX(-100%);
-		height: 0;
+		transform: translateX(calc(1rem - 100%));
+		opacity: 0;
 	}
 
 	&-button[aria-expanded="true"] ~ .menu {
 		transform: translateX(0%);
+		opacity: 1;
 	}
 
 	li[aria-current="page"] {
