@@ -23,6 +23,7 @@ align-items: flex-start;
 
 .menu-button {
 	pointer-events: all;
+	z-index: 1; // Overlap menu items
 	border: 0;
 	border-radius: $border-rounded;
 	padding: 0.5rem;
@@ -46,7 +47,6 @@ align-items: flex-start;
 	}
 
 	&[aria-expanded="true"] {
-		z-index: 1; // Overlap menu items
 		transform: translateX(0%);
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
