@@ -6,9 +6,12 @@
 @extend %row;
 justify-content: flex-end;
 align-items: flex-start;
-
 min-height: 2.4rem; // Navigation menu height
 
+@media (min-width: $mq-header-narrow) {
+	justify-content: space-between;
+	min-height: auto;
+}
 .navigation-menu {
 	@include navigation-menu;
 }

@@ -2,6 +2,7 @@
 
 $transition: 0.15s ease-out;
 
+flex-shrink: 0; // Prevent wrapping on non-mobile screens
 font-size: 80%;
 
 .switch {

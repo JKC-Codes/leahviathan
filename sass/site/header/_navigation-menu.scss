@@ -17,6 +17,10 @@ align-items: flex-start;
 	margin-right: auto;
 }
 
+@media (min-width: $mq-header-narrow) {
+	position: static;
+}
+
 .menu-button {
 	pointer-events: all;
 	border: 0;
@@ -31,6 +35,10 @@ align-items: flex-start;
 	transition: $transition;
 	transition-property: margin, transform;
 	transform: translateX(calc(100% + 0.5rem));
+
+	@media (min-width: $mq-header-narrow) {
+		display: none;
+	}
 
 	// Only display when JavaScript has added ARIA attribute
 	&:not([aria-expanded]) {
@@ -49,10 +57,6 @@ align-items: flex-start;
 
 	&:hover {
 		background: $colour-sea-light;
-	}
-
-	@media (min-width: $mq-header-narrow) {
-		display: none;
 	}
 
 	&-icon {
@@ -129,9 +133,20 @@ align-items: flex-start;
 	transition: $transition;
 	transition-property: transform, opacity, background-color;
 
+	@media (min-width: $mq-header-narrow) {
+		margin: 0;
+		padding: 0;
+		background: none;
+	}
+
 	&-button[aria-expanded] ~ .menu {
 		transform: translateX(calc(1rem - 100%));
 		opacity: 0;
+
+		@media (min-width: $mq-header-narrow) {
+			transform: none;
+			opacity: 1;
+		}
 	}
 
 	&-button[aria-expanded="true"] ~ .menu {
