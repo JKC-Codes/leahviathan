@@ -23,22 +23,10 @@ button.addEventListener('click', function(event) {
 
 
 // ANIMATIONS TOGGLE
-var body = document.querySelector('body');
 var toggle = document.querySelector('#site-animations-toggle');
 var checkbox = toggle.querySelector('input');
 var storedPreference = localStorage.getItem('prefersReducedMotion');
 var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-function updateMotionPreferences() {
-	if (checkbox.checked) {
-		body.dataset.prefersReducedMotion = 'no-preference';
-		localStorage.setItem('prefersReducedMotion', 'no-preference');
-	}
-	else {
-		body.dataset.prefersReducedMotion = 'reduce';
-		localStorage.setItem('prefersReducedMotion', 'reduce');
-	}
-}
 
 // Honour previously set preferences
 if (storedPreference != null) {
@@ -49,11 +37,15 @@ else {
 	prefersReducedMotion ? checkbox.checked = false : checkbox.checked = true;
 }
 
-// Act on preferences
-checkbox.checked ? body.dataset.prefersReducedMotion = 'no-preference' : body.dataset.prefersReducedMotion = 'reduce';
-
 // Listen for switches
-toggle.addEventListener('change', updateMotionPreferences);
+toggle.addEventListener('change', function() {
+	if (checkbox.checked) {
+		localStorage.setItem('prefersReducedMotion', 'no-preference');
+	}
+	else {
+		localStorage.setItem('prefersReducedMotion', 'reduce');
+	}
+});
 
 // Show toggle
 toggle.removeAttribute('hidden');
