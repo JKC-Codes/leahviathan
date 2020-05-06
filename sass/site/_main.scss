@@ -1,0 +1,29 @@
+#page-main {
+
+margin-top: 1rem;
+
+h1 {
+	position: relative; // Contains spotlight
+	float: right; // Align text right while also collapsing
+	line-height: 1;
+	margin-top: 1rem;
+	margin-bottom: 4rem;
+
+	& + * {
+		clear: right; // Prevent elements actually floating
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		bottom: 0;
+		transform: translateY(50%);
+		right: -1rem;
+		width: 200%;
+		padding-top: 300%;
+		background-image: radial-gradient(ellipse farthest-side at calc(100% - 1rem) 50%, black 2px, $colour-sea-light 1px calc(50% + 1rem), transparent calc(100% - 1rem));
+	}
+}
+
+}
