@@ -1,6 +1,6 @@
 @mixin animations-toggle {
 
-$transition: 0.15s ease-out;
+$transition: 0.05s linear;
 
 flex-shrink: 0; // Prevent wrapping on non-mobile screens
 font-size: 80%;
