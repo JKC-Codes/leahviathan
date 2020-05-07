@@ -7,7 +7,8 @@ h1 {
 	float: right; // Align text right while also collapsing
 	line-height: 1;
 	margin-top: 1rem;
-	margin-bottom: 4rem;
+	padding-right: 2.5rem;
+	padding-bottom: 4rem;
 
 	& + * {
 		clear: right; // Prevent elements actually floating
@@ -17,12 +18,22 @@ h1 {
 		content: '';
 		position: absolute;
 		z-index: -1;
-		bottom: 0;
+		bottom: 1rem;
 		transform: translateY(50%);
 		right: -1rem;
 		width: 200%;
-		padding-top: 300%;
-		background-image: radial-gradient(ellipse farthest-side at calc(100% - 1rem) 50%, black 2px, $colour-sea-light 1px calc(50% + 1rem), transparent calc(100% - 1rem));
+		padding-top: calc(200% + 6.8rem);
+		background-image:
+			url(../img/diver.png),
+			radial-gradient(
+				ellipse farthest-side at calc(100% - 1rem) 50%,
+				$colour-sea-light calc(50% + 2rem),
+				transparent
+			)
+		;
+		background-size: 4rem, 100%;
+		background-repeat: no-repeat;
+		background-position: 100% calc(50% - 3rem);
 	}
 }
 
