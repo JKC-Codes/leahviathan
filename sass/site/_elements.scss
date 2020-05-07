@@ -26,7 +26,7 @@ body {
 	padding: 1rem;
 	background: $colour-sea;
 
-	@media (min-width: $mq-header-narrow) {
+	@media (min-width: $mq-site-narrow) {
 		padding: 1rem 2rem;
 	}
 }

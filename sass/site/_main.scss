@@ -37,7 +37,7 @@ h1 {
 		background-repeat: no-repeat;
 		background-position: 100% calc(50% - 4rem);
 
-		@media (min-width: $mq-header-narrow) {
+		@media (min-width: $mq-site-narrow) {
 			right: -2rem;
 		}
 	}
