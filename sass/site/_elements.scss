@@ -23,11 +23,27 @@ html {
 body {
 	min-height: 100vh;
 	margin: 0;
-	padding: 1rem;
-	background: $colour-sea;
+	padding: 0 1rem;
+	background-color: $colour-sea;
 
 	@media (min-width: $mq-site-narrow) {
-		padding: 1rem 2rem;
+		$padding: 2rem;
+		padding-left: $padding;
+		padding-right: $padding;
+		background-image:
+			linear-gradient(to bottom,
+				$colour-sea-dark,
+				transparent $padding,
+				transparent calc(100% - #{$padding}),
+				$colour-sea-dark
+			),
+			linear-gradient(to right,
+				$colour-sea-dark,
+				transparent $padding,
+				transparent calc(100% - #{$padding}),
+				$colour-sea-dark
+			)
+		;
 	}
 }
 

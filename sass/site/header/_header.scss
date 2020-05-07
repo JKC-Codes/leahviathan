@@ -6,7 +6,8 @@
 @extend %row;
 justify-content: flex-end;
 align-items: flex-start;
-min-height: 2.4rem; // Navigation menu height
+padding-top: 1rem;
+min-height: 3.4rem; // Navigation menu height + padding
 
 @media (min-width: $mq-header-narrow) {
 	justify-content: space-between;

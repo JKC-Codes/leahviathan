@@ -39,6 +39,15 @@ h1 {
 
 		@media (min-width: $mq-site-narrow) {
 			right: -2rem;
+			background-image:
+				url(../img/diver.png),
+				radial-gradient(
+					ellipse farthest-side at calc(100% - 1rem) 50%,
+					$colour-sea-light calc(10% + #{$padding}),
+					transparent calc(10% + #{$padding + $spread})
+				)
+			;
+			background-position: calc(100% - 1rem) calc(50% - 2rem), 100% calc(50% - 2rem);
 		}
 	}
 
