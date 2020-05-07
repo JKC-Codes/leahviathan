@@ -8,10 +8,14 @@ h1 {
 	line-height: 1;
 	margin-top: 1rem;
 	padding-right: 2.5rem;
-	padding-bottom: 2rem;
+	padding-bottom: 4rem;
 
 	& + * {
 		clear: right; // Prevent elements actually floating
+	}
+
+	@media (min-width: $mq-site-narrow) {
+		padding-bottom: 2rem;
 	}
 
 	&::before {
@@ -35,7 +39,7 @@ h1 {
 		;
 		background-size: 4rem, 100%;
 		background-repeat: no-repeat;
-		background-position: 100% calc(50% - 2rem);
+		background-position: 100% calc(50% - 4rem), 100% calc(50% - 4rem);
 
 		@media (min-width: $mq-site-narrow) {
 			right: -2rem;
