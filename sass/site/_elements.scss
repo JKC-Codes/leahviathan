@@ -25,12 +25,27 @@ body {
 	margin: 0;
 	padding: 0 1rem;
 	background-color: $colour-sea;
+	background-image: linear-gradient(to bottom,
+		$colour-sea-dark,
+		transparent 2rem,
+		transparent calc(100% - 2rem),
+		$colour-sea-dark
+	);
+	background-repeat: no-repeat;
 
 	@media (min-width: $mq-site-narrow) {
 		$padding: 2rem;
 		padding-left: $padding;
 		padding-right: $padding;
 		background-image:
+			radial-gradient(circle farthest-corner at bottom right,
+				transparent calc(100% - #{$padding}),
+				$colour-sea-dark
+			),
+			radial-gradient(circle farthest-corner at bottom left,
+				transparent calc(100% - #{$padding}),
+				$colour-sea-dark
+			),
 			linear-gradient(to bottom,
 				$colour-sea-dark,
 				transparent $padding,
@@ -44,6 +59,7 @@ body {
 				$colour-sea-dark
 			)
 		;
+		background-size: $padding $padding, $padding $padding, 100%, 100%;
 	}
 }
 
