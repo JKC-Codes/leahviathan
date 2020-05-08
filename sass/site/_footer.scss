@@ -1,8 +1,24 @@
 #page-footer {
 
+margin: 0 -1rem;
+padding: 6rem 0rem 2rem;
+background-image: linear-gradient(to bottom,
+	transparent,
+	$colour-sea-dark 4rem
+);
+background-repeat: no-repeat;
 font-size: 80%;
-color: #b3b3b3;
-justify-self: center;
+color: $colour-minimal;
+text-align: center;
+
+@media (min-width: $mq-site-narrow) {
+	margin-left: -2rem;
+	margin-right: -2rem;
+	background-image:	linear-gradient(to bottom,
+		transparent,
+		$colour-sea-dark 4rem
+	);
+}
 
 a {
 	color: inherit;
