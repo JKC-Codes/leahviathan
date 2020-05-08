@@ -3,19 +3,41 @@
 margin-top: 1rem;
 
 h1 {
+	$site-margin: 1rem;
+	$diver-size: 4rem;
+
 	position: relative; // Contains spotlight
 	float: right; // Align text right while also collapsing
 	line-height: 1;
+	font-size: 2.5rem;
 	margin-top: 1rem;
-	padding-right: 2.5rem;
-	padding-bottom: 4rem;
+	padding-right: $diver-size - $site-margin - ($diver-size * 0.25);
+	padding-bottom: $diver-size / 2;
 
-	& + * {
-		clear: right; // Prevent elements actually floating
+	@media (min-width: 20rem) {
+		font-size: 15.625vw;
+		$diver-size: 25vw;
+		padding-right: calc(#{$diver-size} - #{$site-margin} - (#{$diver-size * 0.25}));
+		padding-bottom: $diver-size / 2;
+	}
+
+	@media (min-width: 28rem) {
+		font-size: 3.5rem;
+		$diver-size: 5.5rem;
+
+		padding-right: $diver-size - $site-margin - ($diver-size * 0.25);
+		padding-bottom: $diver-size / 2;
 	}
 
 	@media (min-width: $mq-site-narrow) {
-		padding-bottom: 2rem;
+		$site-margin: 2rem;
+
+		padding-right: $diver-size - $site-margin - ($diver-size * 0.25);
+		padding-bottom: $diver-size / 2;
+	}
+
+	& + * {
+		clear: right; // Prevent elements actually floating
 	}
 
 	&::before {
@@ -27,31 +49,36 @@ h1 {
 		transform: translateY(50%);
 		width: 1000%;
 		padding-top: 1000%;
-		$padding: 6rem;
-		$spread: 4rem;
-		background-image:
-			url(../img/diver.png),
-			radial-gradient(
-				ellipse farthest-side at 100% 50%,
-				$colour-sea-light calc(10% + #{$padding}),
-				transparent calc(10% + #{$padding + $spread})
-			)
-		;
-		background-size: 4rem, 100%;
 		background-repeat: no-repeat;
-		background-position: 100% calc(50% - 4rem), 100% calc(50% - 4rem);
 
-		@media (min-width: $mq-site-narrow) {
-			right: -2rem;
+		@mixin diver($diver-size) {
+			$padding: 6rem;
+			$spread: 4rem;
+
 			background-image:
 				url(../img/diver.png),
 				radial-gradient(
-					ellipse farthest-side at calc(100% - 1rem) 50%,
+					ellipse farthest-side at calc(100% - #{$diver-size / 2}) center,
 					$colour-sea-light calc(10% + #{$padding}),
 					transparent calc(10% + #{$padding + $spread})
 				)
 			;
-			background-position: calc(100% - 1rem) calc(50% - 2rem), 100% calc(50% - 2rem);
+			background-size: $diver-size, 100%;
+			background-position: 100% calc(50% - #{$diver-size / 2}), 100% calc(50% - #{$diver-size / 2});
+		}
+
+		@include diver(4rem);
+
+		@media (min-width: 20rem) {
+			@include diver(25vw);
+		}
+
+		@media (min-width: 28rem) {
+			@include diver(5.5rem);
+		}
+
+		@media (min-width: $mq-site-narrow) {
+			right: -2rem;
 		}
 	}
 
