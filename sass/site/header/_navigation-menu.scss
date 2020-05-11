@@ -130,6 +130,7 @@ align-items: flex-start;
 	border-radius: $border-rounded;
 	margin-top: -1rem;
 	padding: 1rem 1rem 1rem calc(1rem + 1ch);
+	color: $colour-text-light;
 	background: $colour-sea-dark;
 	transition: $transition;
 	transition-property: transform, opacity, background-color;
@@ -137,6 +138,7 @@ align-items: flex-start;
 	@media (min-width: $mq-header-narrow) {
 		margin: 0;
 		padding: 0;
+		color: inherit;
 		background: none;
 		transition: none;
 		line-height: 1;
