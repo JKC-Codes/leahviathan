@@ -11,23 +11,35 @@ background: linear-gradient(
 	#105c64
 );
 
+*:focus {
+	outline-color: $colour-brand;
+}
+
 @media (min-width: $mq-site-narrow) {
 	margin-left: -2rem;
 	margin-right: -2rem;
 }
 
 #page-header {
-	.navigation-menu {
-		.menu-button[aria-expanded="false"] {
-			color: $colour-text-dark;
+	color: #3a4e62;
+
+	.menu-button {
+		&:not([aria-expanded="true"]) {
+			color: inherit;
+
+			&:hover {
+				background: #cceeff;
+			}
 		}
 	}
 
-	.animations-toggle {
-		color: $colour-text-dark;
+	@media (min-width: $mq-header-narrow) {
+		a:link {
+			color: inherit;
+		}
 
-		.switch {
-			color: $colour-text-light;
+		a:hover {
+			color: $colour-brand;
 		}
 	}
 }
