@@ -1,72 +1,86 @@
+#hero {
+
+margin: 0 -1rem;
+padding: 0rem 1rem;
+background: linear-gradient(
+	#e5f6ff,
+	#cceeff 50%,
+	#61d1d6,
+	#1fa2ad calc(50% + 1rem),
+	#1fa2ad calc(100% - 1rem),
+	#105c64
+);
+
+@media (min-width: $mq-site-narrow) {
+	margin-left: -2rem;
+	margin-right: -2rem;
+}
+
 #page-header {
+	.navigation-menu {
+		.menu-button[aria-expanded="false"] {
+			color: $colour-text-dark;
+		}
+	}
 
-	grid-column: 1 / -1;
-	background: linear-gradient(
-		#e5f6ff,
-		#cceeff 50%,
-		#61d1d6,
-		#1fa2ad calc(50% + 1rem),
-		#1fa2ad calc(100% - 1rem),
-		#105c64
-	);
-	padding: 1rem 1rem 0;
-	display: grid;
-	justify-items: center;
-	align-items: start;
-
-	.animations-toggle[data-checked] {
+	.animations-toggle {
 		color: $colour-text-dark;
-	}
 
-	h1 {
-		font: 2.5rem / 1 'Open Sans Condensed', sans-serif;
-		text-align: center;
-		text-transform: uppercase;
-		letter-spacing: 0.1ch;
-		color: $colour-brand;
-
-		@media(min-width: 20rem) {
-			font-size: 15.65vw;
-		}
-
-		@media(min-width: 40rem) {
-			font-size: 5rem;
-		}
-
-		.bracket-left,
-		.bracket-right {
-			display: inline-block;
-			transform: translateY(-0.2ch);
+		.switch {
+			color: $colour-text-light;
 		}
 	}
+}
 
-	.social-icons {
-		$mediaQuery: 30rem;
-		$icon-size: 10vw;
+h1 {
+	margin-top: 4rem;
+	font: 2.5rem / 1 'Open Sans Condensed', sans-serif;
+	text-align: center;
+	letter-spacing: 0.1ch;
+	color: $colour-brand;
 
-		@extend %row;
-		justify-content: space-between;
-		min-width: 12rem;
-		max-width: 16rem;
+	@media(min-width: 20rem) {
+		font-size: 15.65vw;
+	}
+
+	@media(min-width: 40rem) {
+		font-size: 5rem;
+	}
+
+	.bracket-left,
+	.bracket-right {
+		display: inline-block;
+		transform: translateY(-0.2ch);
+	}
+}
+
+.social-icons {
+	$mediaQuery: 30rem;
+	$icon-size: 10vw;
+
+	@extend %row;
+	justify-content: space-between;
+	min-width: 12rem;
+	max-width: 16rem;
+
+	@media(min-width: $mediaQuery) {
+		width: $icon-size * 5;
+	}
+
+	& a,
+	& img {
+		display: block;
+		border-radius: 25%;
+		min-width: 2.4rem;
+		min-height: 2.4rem;
+		max-width: 3.2rem;
+		max-height: 3.2rem;
 
 		@media(min-width: $mediaQuery) {
-			width: $icon-size * 5;
-		}
-
-		& a,
-		& img {
-			display: block;
-			border-radius: 25%;
-			min-width: 2.4rem;
-			min-height: 2.4rem;
-			max-width: 3.2rem;
-			max-height: 3.2rem;
-
-			@media(min-width: $mediaQuery) {
-				width: $icon-size;
-				height: $icon-size;
-			}
+			width: $icon-size;
+			height: $icon-size;
 		}
 	}
+}
 
 }
