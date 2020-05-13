@@ -4,11 +4,10 @@ margin: 0 -1rem;
 padding: 0rem 1rem 6rem;
 background: linear-gradient(
 	#e5f6ff,
-	#cceeff 65%,
+	#cceeff 67.5%,
 	#61d1d6,
-	#1fa2ad calc(65% + 1rem),
+	#1fa2ad calc(67.5% + 1rem),
 	#1fa2ad calc(100% - 1rem),
-	#105c64,
 	transparent
 );
 
@@ -17,10 +16,16 @@ background: linear-gradient(
 }
 
 @media (min-width: $mq-site-narrow) {
-	margin-left: -2rem;
-	margin-right: -2rem;
-	padding-left: 2rem;
-	padding-right: 2rem;
+	margin: 0 -2rem;
+	padding: 0 2rem 8rem;
+	background: linear-gradient(
+		#e5f6ff,
+		#cceeff 65%,
+		#61d1d6,
+		#1fa2ad calc(65% + 1rem),
+		#1fa2ad calc(100% - 1rem),
+		transparent
+	);
 }
 
 #page-header {
@@ -121,7 +126,7 @@ h1 {
 			height: 100%;
 			border-radius: 25%;
 			transform-origin: center bottom;
-			transform: translateY(0.2rem) scale(0.85, -1.15) skewX(-15deg);
+			transform: translateY(0.4rem) scale(0.85, -1.15) skewX(-15deg);
 			filter: saturate(50%) opacity(20%) blur(0.1rem);
 		}
 	}
