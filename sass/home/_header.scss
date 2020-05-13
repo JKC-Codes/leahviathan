@@ -21,7 +21,6 @@ background: linear-gradient(
 	margin-right: -2rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
-	padding-bottom: 8rem;
 }
 
 #page-header {
@@ -107,6 +106,41 @@ h1 {
 				margin-left: 1.05rem;
 			}
 		}
+	}
+
+	[class^="icon"] {
+		position: relative;
+
+		&::before {
+			content: "";
+			pointer-events: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 25%;
+			transform-origin: center bottom;
+			transform: translateY(0.2rem) scale(0.85, -1.15) skewX(-15deg);
+			filter: saturate(50%) opacity(20%) blur(0.1rem);
+		}
+	}
+
+	$fade: linear-gradient(to top, transparent, #1fa2ad 90%);
+	.icon-twitch::before {
+		background-image: $fade, url("../img/icon-twitch.svg");
+	}
+
+	.icon-twitter::before {
+		background-image: $fade, url("../img/icon-twitter.svg");
+	}
+
+	.icon-instagram::before {
+		background-image: $fade, url("../img/icon-instagram.svg");
+	}
+
+	.icon-youtube::before {
+		background-image: $fade, url("../img/icon-youtube.svg");
 	}
 }
 
