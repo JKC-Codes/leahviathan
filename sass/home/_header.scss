@@ -61,6 +61,7 @@ h1 {
 
 	@media(min-width: 20rem) {
 		font-size: 15vw;
+		white-space: nowrap;
 	}
 
 	@media(min-width: 50rem) {
@@ -82,10 +83,8 @@ h1 {
 	a,
 	img {
 		display: block;
-		min-width: 2.4rem;
-		min-height: 2.4rem;
-		max-width: 3.2rem;
-		max-height: 3.2rem;
+		width: 2.4rem;
+		height: 2.4rem;
 		border-radius: 25%;
 	}
 
@@ -94,22 +93,26 @@ h1 {
 	}
 
 	@media (min-width: 37.5rem) {
-		a {
+		a,
+		img {
 			width: 8vw;
+			height: 8vw;
+		}
 
-			& + a {
-				margin-left: 2.6vw;
-			}
+		a + a {
+			margin-left: 2.6vw;
 		}
 	}
 
 	@media (min-width: 50rem) {
-		a {
+		a,
+		img {
 			width: 3.2rem;
+			height: 3.2rem;
+		}
 
-			& + a {
-				margin-left: 1.05rem;
-			}
+		a + a {
+			margin-left: 1.05rem;
 		}
 	}
 
