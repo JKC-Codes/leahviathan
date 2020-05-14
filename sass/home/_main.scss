@@ -1,4 +1,26 @@
-body,
-#page-footer {
+body {
 	background: $colour-sea-dark;
+}
+
+#page-footer {
+	background: transparent;
+}
+
+.bubble {
+	max-width: 42ch;
+	margin: 10rem auto;
+	text-align: center;
+
+	h2 {
+		margin-bottom: 2rem;
+	}
+
+	p {
+		text-align: start;
+	}
+
+	.button {
+		@extend %button;
+		margin-top: 2rem;
+	}
 }
