@@ -4,7 +4,12 @@ $transition: 0.05s linear;
 
 z-index: 0; // Prevent outline being covered
 flex-shrink: 0; // Prevent wrapping on non-mobile screens
+margin-right: $margin-site-narrow;
 font-size: 80%;
+
+@media (min-width: $mq-site-narrow) {
+	margin-right: $margin-site;
+}
 
 .switch {
 	position: relative; // contains input and toggle

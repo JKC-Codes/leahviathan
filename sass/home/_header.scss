@@ -1,7 +1,6 @@
 #hero {
 
-margin: 0 -1rem;
-padding: 0rem 1rem 6rem;
+padding-bottom: 6rem;
 background: linear-gradient(
 	#d6ebf5,
 	#e7f6fd 67.5%,
@@ -15,8 +14,7 @@ background: linear-gradient(
 }
 
 @media (min-width: $mq-site-narrow) {
-	margin: 0 -2rem;
-	padding: 0 2rem 8rem;
+	padding-bottom: 8rem;
 }
 
 #page-header {

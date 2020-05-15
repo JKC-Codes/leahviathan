@@ -1,23 +1,24 @@
-@import './navigation-menu';
-@import './animations-toggle';
-
 #page-header {
+
+$header-margin-top: 1rem;
 
 @extend %row;
 justify-content: flex-end;
 align-items: flex-start;
-padding-top: 1rem;
-min-height: 3.4rem; // Navigation menu height + padding
+padding-top: $header-margin-top;
+min-height: 4.1rem; // Navigation menu button height
 
 @media (min-width: $mq-header-narrow) {
 	justify-content: space-between;
 	min-height: auto;
 }
 .navigation-menu {
+	@import './navigation-menu';
 	@include navigation-menu;
 }
 
 .animations-toggle {
+	@import './animations-toggle';
 	@include animations-toggle;
 }
 

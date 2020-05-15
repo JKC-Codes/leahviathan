@@ -3,8 +3,8 @@
 $transition: 0.1s ease-out;
 
 position: absolute;
-top: 1rem;
-left: 0rem;
+top: $header-margin-top;
+left: 0;
 z-index: 1; // Overlap animations toggle
 pointer-events: none; // Prevent blocking of animations toggle
 display: inline-flex;
@@ -21,15 +21,18 @@ align-items: flex-start;
 @media (min-width: $mq-header-narrow) {
 	position: static;
 	pointer-events: all;
+	margin-left: $margin-site;
 }
 
 .menu-button {
+	$padding: 0.5rem;
+
 	pointer-events: all;
 	z-index: 1; // Overlap menu items
 	border: 0;
 	border-radius: $border-rounded;
-	padding: 0.5rem;
-	margin-top: -0.5rem;
+	padding: $padding;
+	margin-top: -$padding;
 	margin-left: -100%;
 	margin-right: 100%;
 	background: none;
@@ -37,7 +40,7 @@ align-items: flex-start;
 	line-height: 1;
 	transition: $transition;
 	transition-property: margin, transform;
-	transform: translateX(100%) translateX(0.5rem); // Separation is required for IE
+	transform: translateX(100%) translateX($margin-site-narrow - $padding); // Separation is required for IE
 
 	@media (min-width: $mq-header-narrow) {
 		display: none;
@@ -128,7 +131,7 @@ align-items: flex-start;
 .menu {
 	list-style-type: none;
 	border-radius: $border-rounded;
-	margin-top: -1rem;
+	margin-top: -$header-margin-top;
 	padding: 1rem 1rem 1rem calc(1rem + 1ch);
 	color: $colour-text-light;
 	background: $colour-sea-dark;
@@ -145,7 +148,7 @@ align-items: flex-start;
 	}
 
 	&-button[aria-expanded] ~ .menu {
-		transform: translateX(1rem) translateX(-100%); // Separation is required for IE
+		transform: translateX($margin-site-narrow) translateX(-100%); // Separation is required for IE
 		opacity: 0;
 
 		@media (min-width: $mq-header-narrow) {
