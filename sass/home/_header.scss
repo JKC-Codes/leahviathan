@@ -43,7 +43,7 @@ background: linear-gradient(
 
 h1 {
 	margin-top: 4rem;
-	font: 2.5rem / 1 'Open Sans Condensed', sans-serif;
+	font: 2.4rem / 1 'Open Sans Condensed', sans-serif;
 	text-align: center;
 	letter-spacing: 0.1ch;
 	color: $colour-brand;
@@ -60,7 +60,16 @@ h1 {
 	.bracket-left,
 	.bracket-right {
 		display: inline-block;
-		transform: translateY(-0.2ch);
+		transform: translateY(-0.1ex);
+		font-size: 110%;
+	}
+
+	.bracket-left {
+		margin-right: 0.15em;
+	}
+
+	.bracket-right {
+		margin-left: 0.15em;
 	}
 }
 
