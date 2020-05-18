@@ -1,5 +1,7 @@
 #hero {
 
+position: relative; // Overlap main
+margin-bottom: -1rem; // Prevent hard border with main
 padding-bottom: 6rem;
 background: linear-gradient(
 	#d6ebf5,

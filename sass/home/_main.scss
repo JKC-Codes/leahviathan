@@ -1,26 +1,45 @@
-body {
-	background: $colour-sea-dark;
-}
+main {
+	padding: 20rem 0;
+	@extend %row;
+	justify-content: center;
+	background: url("../img/diver.png"),
+		radial-gradient(circle farthest-side at center,
+		#dcecee 30ch,
+		$colour-sea calc(30ch + 1rem),
+		$colour-sea-dark
+	);
+	background-position: calc(50% + 10rem) calc(50% + 10rem), 0% 0%;
+	background-size: 8rem, auto auto;
+	background-repeat: no-repeat;
 
-#page-footer {
-	background: transparent;
-}
+	.bubble {
+		position: relative;
+		max-width: 42ch;
+		margin: 0 $margin-site-narrow;
+		color: $colour-text-dark;
+		text-align: center;
 
-.bubble {
-	max-width: 42ch;
-	margin: 10rem auto;
-	text-align: center;
+		h2 {
+			margin-bottom: 2rem;
+			color: black;
+		}
 
-	h2 {
-		margin-bottom: 2rem;
-	}
+		p {
+			text-align: start;
+		}
 
-	p {
-		text-align: start;
-	}
+		.button {
+			@extend %button;
+			margin-top: 2rem;
+			border-color: $colour-brand;
 
-	.button {
-		@extend %button;
-		margin-top: 2rem;
+			&:hover:not(:active) {
+				border: 0.05rem solid $colour-contrast;
+			}
+
+			&:focus {
+				outline-color: $colour-brand;
+			}
+		}
 	}
 }
