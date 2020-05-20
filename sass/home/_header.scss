@@ -1,22 +1,18 @@
 #hero {
 
 position: relative; // Overlap main
-margin-bottom: -1rem; // Prevent hard border with main
-padding-bottom: 6rem;
+margin-bottom: -2rem; // Prevent hard border with main
+padding-bottom: 10rem;
 background: linear-gradient(
 	#d6ebf5,
-	#e7f6fd 67.5%,
-	hsl(185, 55%, 92.5%) 67.5%,
+	#e7f6fd 65%,
+	hsl(185, 55%, 92.5%) 65%,
 	#34a7b2 95%,
 	transparent
 );
 
 *:focus {
 	outline-color: $colour-brand;
-}
-
-@media (min-width: $mq-site-narrow) {
-	padding-bottom: 8rem;
 }
 
 #page-header {
@@ -44,7 +40,7 @@ background: linear-gradient(
 }
 
 h1 {
-	margin-top: 4rem;
+	margin-top: 8rem;
 	font: 2.4rem / 1 'Open Sans Condensed', sans-serif;
 	text-align: center;
 	letter-spacing: 0.1ch;
