@@ -2,6 +2,10 @@
 
 margin-top: 1rem;
 
+@media(min-width: $mq-site-narrow) {
+	margin-top: 3rem;
+}
+
 h1 {
 	$diver-size: 4rem;
 
