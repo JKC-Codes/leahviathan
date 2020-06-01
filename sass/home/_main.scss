@@ -12,6 +12,11 @@ main {
 	background-size: 8rem, auto auto;
 	background-repeat: no-repeat;
 
+	@media(max-width: 35rem) {
+		background-position: calc(50% + 8rem) calc(50% + 12rem), 0% 0%;
+		background-size: 30vw, auto auto;
+	}
+
 	.bubble {
 		position: relative;
 		max-width: 42ch;
