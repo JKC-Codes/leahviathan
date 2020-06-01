@@ -3,7 +3,9 @@ let path = require('./html/_data/path');
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("img/");
 	eleventyConfig.addPassthroughCopy("js/");
-	eleventyConfig.addWatchTarget("./sass/");
+	eleventyConfig.setBrowserSyncConfig({
+    files: "./staging" + path.site + "/**/css/**/*"
+  });
   return {
     dir: {
 			input: "html/",
