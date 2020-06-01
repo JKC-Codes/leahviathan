@@ -15,7 +15,7 @@ function removeTemp() {
 }
 
 function eleventy() {
-	return shell(`eleventy --output="${destination}"`);
+	return shell(`npx @11ty/eleventy --output="${destination}"`);
 }
 
 function html() {
@@ -37,7 +37,6 @@ function html() {
 	.pipe(gulp.dest(destination));
 }
 
-sass.compiler = require('sass');
 function css() {
 	return gulp.src('sass/**/*.scss')
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
