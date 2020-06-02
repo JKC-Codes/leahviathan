@@ -1,0 +1,42 @@
+@import './site/helpers';
+
+#page-main {
+
+img {
+	margin: 3rem 0 1rem;
+}
+
+.biography {
+	margin-bottom: 1rem;
+
+	img {
+		max-width: 16rem;
+		border-radius: 1rem;
+	}
+}
+
+@media(min-width: 45rem) {
+
+	.key-info {
+		max-width: 55%;
+	}
+
+	.biography {
+		position: relative;
+		margin-top: 3rem;
+
+		h2 {
+			max-width: 55%
+		}
+
+		img {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 40%;
+			margin: 0;
+		}
+	}
+}
+
+}
