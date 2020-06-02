@@ -13,6 +13,7 @@ h1 {
 	float: right; // Align text right while also collapsing
 	line-height: 1;
 	font-size: 2.5rem;
+	margin-bottom: 1rem;
 	padding-right: $diver-size * 0.75 - $margin-site-narrow;
 	padding-bottom: $diver-size / 2;
 
@@ -33,6 +34,7 @@ h1 {
 	}
 
 	@media (min-width: $mq-site-narrow) {
+		margin-bottom: 0rem;
 		padding-right: $diver-size * 0.75 - $margin-site;
 		padding-bottom: $diver-size / 2;
 	}
