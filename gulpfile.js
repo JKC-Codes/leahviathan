@@ -117,6 +117,8 @@ exports.publish = gulp.series(
 		)
 	),
 	createDocs,
-	removeTemp,
-	git
+	gulp.parallel(
+		removeTemp,
+		git
+	)
 );
