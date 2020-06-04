@@ -83,7 +83,7 @@ function createDocs() {
 }
 
 function git() {
-	return shell('git add docs && git commit -m \"Build for publishing\" && git push');
+	return shell('git add docs && git commit -m \"Build for publishing\" docs && git push');
 }
 
 
