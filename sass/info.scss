@@ -44,18 +44,30 @@ img {
 }
 
 .acting {
-	@extend %group;
-	margin: 0 0 3rem;
+	margin: 3rem 0;
 
-	@media(min-width: 30rem) {
-		margin-top: 3rem;
+	img {
+		margin: 0 0 1rem;
+	}
+
+	@media(min-width: 32rem) {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-column-gap: 1rem;
+		position: relative; // Contains image
+
+		* {
+			grid-column: 1;
+		}
 
 		img {
-			float: left;
-			width: 35vw;
-			height: 17rem;
+			grid-area: 1 / 2 / 99 / 3;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
 			object-fit: cover;
-			margin: 0 1rem 1rem 0;
+			object-position: center top;
 		}
 	}
 }
