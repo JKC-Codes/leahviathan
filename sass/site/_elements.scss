@@ -8,6 +8,14 @@
 	@extend %outline-focus;
 }
 
+html:focus,
+body:focus,
+iframe:focus,
+div:focus,
+span:focus {
+	outline: none;
+}
+
 *::selection {
 	background-color: $colour-contrast;
 	color: $colour-text-dark;
