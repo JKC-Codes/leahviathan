@@ -130,7 +130,8 @@ align-items: flex-start;
 
 .menu {
 	list-style-type: none;
-	border-radius: $border-rounded;
+	border-top-right-radius: $border-rounded;
+	border-bottom-right-radius: $border-rounded;
 	margin-top: -$header-margin-top;
 	padding: 1rem 1rem 1rem calc(1rem + 1ch);
 	color: $colour-text-light;
