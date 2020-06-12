@@ -5,7 +5,7 @@ $header-margin-top: 1rem;
 @extend %row;
 justify-content: flex-end;
 align-items: flex-start;
-max-width: 70ch;
+max-width: $content-max-width;
 margin: 0 auto;
 padding-top: $header-margin-top;
 min-height: 4.1rem; // Navigation menu button height

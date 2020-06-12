@@ -1,6 +1,6 @@
 #page-main {
 
-max-width: 70ch;
+max-width: $content-max-width;
 margin: 1rem auto 0;
 
 @media(min-width: $mq-site-narrow) {
