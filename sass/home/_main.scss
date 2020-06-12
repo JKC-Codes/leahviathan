@@ -6,7 +6,7 @@ main {
 		radial-gradient(circle farthest-side at center,
 		#dcecee 30ch,
 		$colour-sea calc(30ch + 1rem),
-		$colour-sea-dark
+		$colour-sea-dark 31rem
 	);
 	background-position: calc(50% + 10rem) calc(50% + 10rem), 0% 0%;
 	background-size: 8rem, auto auto;
