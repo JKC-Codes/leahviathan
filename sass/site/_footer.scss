@@ -6,6 +6,10 @@ font-size: 80%;
 color: $colour-minimal;
 text-align: center;
 
+@media(min-width: $mq-site-wide) {
+	grid-column: 2;
+}
+
 a {
 	color: inherit;
 }

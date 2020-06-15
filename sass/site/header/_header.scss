@@ -14,6 +14,13 @@ min-height: 4.1rem; // Navigation menu button height
 	justify-content: space-between;
 	min-height: auto;
 }
+
+@media (min-width: $mq-site-wide) {
+	position: relative; // Contains animations toggle
+	margin: 0;
+	justify-self: end;
+}
+
 .navigation-menu {
 	@import './navigation-menu';
 	@include navigation-menu;

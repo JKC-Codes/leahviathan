@@ -11,6 +11,14 @@ font-size: 80%;
 	margin-right: $margin-site;
 }
 
+@media(min-width: $mq-site-wide) {
+	position: absolute;
+	right: -$content-max-width * 1.25; // Compensate for 80% font size
+	margin-right: 0;
+	transform: translateX(100%);
+	white-space: nowrap;
+}
+
 .switch {
 	position: relative; // contains input and toggle
 	top: -0.083em; // centre visually

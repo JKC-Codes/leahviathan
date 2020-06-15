@@ -32,6 +32,18 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: $colour-sea;
+
+	@media(min-width: $mq-site-wide) {
+		display: grid;
+		grid-template-columns: minmax(6.5rem, 1fr) 70ch minmax(6.5rem, 1fr);
+		$minimum-margin-size: 6.5rem;
+		background-image: linear-gradient(to right,
+		 #002b30 calc(50% - #{$content-max-width / 2} - #{$minimum-margin-size}),
+		 #004f57 calc(50% - #{$content-max-width / 2}),
+		 #004f57 calc(50% + #{$content-max-width / 2}),
+		 #002b30 calc(50% + #{$content-max-width / 2} + #{$minimum-margin-size})
+		)
+	}
 }
 
 main {

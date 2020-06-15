@@ -24,6 +24,10 @@ align-items: flex-start;
 	margin-left: $margin-site;
 }
 
+@media(min-width: $mq-site-wide) {
+	margin-left: 0;
+}
+
 .menu-button {
 	$padding: 0.5rem;
 
@@ -182,6 +186,10 @@ align-items: flex-start;
 			@media (min-width: $mq-header-narrow) {
 					display: none;
 			}
+
+			@media (min-width: $mq-site-wide) {
+					display: block;
+			}
 		}
 	}
 
@@ -189,6 +197,13 @@ align-items: flex-start;
 		> li {
 			display: inline-block;
 			margin: 0 1em 1em 0;
+		}
+	}
+
+	@media (min-width: $mq-site-wide) {
+		> li {
+			display: block;
+			margin-right: 0;
 		}
 	}
 }
