@@ -2,7 +2,7 @@ $content-max-width: 70ch;
 
 $mq-header-narrow: 35rem;
 $mq-site-narrow: $mq-header-narrow;
-$mq-site-wide: calc(#{$content-max-width * 1.43} + #{13rem * 1.25});
+$mq-site-wide: calc(#{$content-max-width * 1.43} + #{15rem * 1.25}); // 1.43 and 1.25 normalise ch and rem values
 
 $margin-site-narrow: 1rem;
 $margin-site: 2rem;

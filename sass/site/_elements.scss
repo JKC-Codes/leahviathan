@@ -38,7 +38,7 @@ body {
 
 	@media(min-width: $mq-site-wide) {
 		display: grid;
-		grid-template-columns: minmax(6.5rem, 1fr) 70ch minmax(6.5rem, 1fr);
+		grid-template-columns: minmax(7.5rem, 1fr) 70ch minmax(7.5rem, 1fr);
 		background-image: linear-gradient(to right,
 		 #002b30 calc(50% - #{$content-max-width / 2} - #{$minimum-margin-size}),
 		 #004f57 calc(50% - #{$content-max-width / 2}),
