@@ -4,7 +4,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("img/");
 	eleventyConfig.addPassthroughCopy("js/");
 	eleventyConfig.setBrowserSyncConfig({
-    files: "./staging" + path.site + "/**/css/**/*"
+    files: [`./staging${path.site}/**/css/**/*.css`, `!./staging${path.site}/**/css/**/*.map`]
   });
   return {
     dir: {
