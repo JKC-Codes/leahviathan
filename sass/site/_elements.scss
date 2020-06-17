@@ -29,6 +29,9 @@ html {
 }
 
 body {
+	$minimum-margin-size: 6.5rem;
+
+	position: relative; // Contains footer gradient
 	min-height: 100vh;
 	margin: 0;
 	background-color: $colour-sea;
@@ -36,13 +39,36 @@ body {
 	@media(min-width: $mq-site-wide) {
 		display: grid;
 		grid-template-columns: minmax(6.5rem, 1fr) 70ch minmax(6.5rem, 1fr);
-		$minimum-margin-size: 6.5rem;
 		background-image: linear-gradient(to right,
 		 #002b30 calc(50% - #{$content-max-width / 2} - #{$minimum-margin-size}),
 		 #004f57 calc(50% - #{$content-max-width / 2}),
 		 #004f57 calc(50% + #{$content-max-width / 2}),
 		 #002b30 calc(50% + #{$content-max-width / 2} + #{$minimum-margin-size})
-		)
+		);
+	}
+
+	&::before {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 10rem;
+		background-image: linear-gradient(to bottom,
+			$colour-sea,
+			transparent calc(100% - 2rem)
+		);
+		background-color: $colour-sea-dark;
+
+		@media(min-width: $mq-site-wide) {
+			width: calc(#{$content-max-width} + #{$minimum-margin-size * 2});
+			background-image: radial-gradient(ellipse farthest-side at top,
+				$colour-sea $content-max-width / 2,
+				transparent
+			);
+		}
 	}
 }
 
