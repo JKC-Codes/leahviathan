@@ -57,7 +57,7 @@ function img() {
 		imagemin.optipng(),
 		imagemin.svgo({plugins: [{removeViewBox: false}]})
 	]))
-		.pipe(gulp.dest(destination));
+	.pipe(gulp.dest(destination));
 }
 
 function netlify() {
