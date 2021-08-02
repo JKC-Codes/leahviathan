@@ -17,7 +17,7 @@
   },
   "scripts": {
     "eleventy": "npx @11ty/eleventy --serve",
-    "sass": "sass sass:staging/leahviathan/css --watch --source-map-urls=absolute",
+    "sass": "npx sass sass:staging/leahviathan/css --watch --source-map-urls=absolute",
     "browser": "start firefox.exe -private-window http://localhost:8080/leahviathan/",
     "start": "npm-run-all --parallel eleventy browser sass"
   },
